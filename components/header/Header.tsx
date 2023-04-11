@@ -1,6 +1,7 @@
 import Modals from "deco-sites/fashion/islands/HeaderModals.tsx";
 import type { Image } from "deco-sites/std/components/types.ts";
 import type { EditableProps as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
@@ -26,7 +27,10 @@ export interface NavItem {
 }
 
 export interface Props {
-  alerts: string[];
+  alert: {
+    title: string;
+    image: LiveImage;
+}
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**
@@ -49,7 +53,7 @@ export interface Props {
 
 function Header(
   {
-    alerts,
+    alert: alert , 
     searchbar: _searchbar,
     products,
     navItems = [],
@@ -60,10 +64,12 @@ function Header(
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
-        <Alert alerts={alerts} />
+        <Alert 
+          title={alert.title}
+          image={alert.image}
+        />
         <Navbar items={navItems} searchbar={searchbar} />
       </div>
-
       <Modals
         menu={{ items: navItems }}
         searchbar={searchbar}
