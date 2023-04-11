@@ -1,35 +1,29 @@
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
+
 import { useId } from "preact/hooks";
 
 export interface Props {
-  alerts: string[];
-  /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
-   */
-  interval?: number;
+  image: LiveImage;
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
+function Alert({ image }: Props) {
   const id = useId();
 
   return (
-    <div id={id}>
-      <Slider class="bg-badge gap-6 scrollbar-none">
-        {alerts.map((alert) => (
-          <Text
-            class="flex justify-center items-center w-screen h-[38px]"
-            variant="caption"
-            tone="default-inverse"
-          >
-            {alert}
-          </Text>
-        ))}
-      </Slider>
-
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
+    <div
+      id={id}
+      class="bg-primary gap-6 scrollbar-none h-[50px]  hidden lg:flex"
+    >
+      <div class="flex justify-center items-center  w-screen h-full">
+        <Image
+          class="ml-2 max-h-full"
+          src={image}
+          width={1846}
+          height={48}
+        />
+      </div>
     </div>
   );
 }

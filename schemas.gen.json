@@ -2060,6 +2060,7 @@
       "title": "SKU"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=@Props": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=@Props": {
       "type": "object",
       "properties": {
         "items": {
@@ -2073,6 +2074,7 @@
       "required": [
         "items"
       ],
+      "title": "deco-sites/mambo/components/ui/ShippingSimulation.tsx@Props"
       "title": "deco-sites/mambo/components/ui/ShippingSimulation.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
@@ -2183,112 +2185,7 @@
       ],
       "title": "deco-cx/live/pages/LivePage.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner": {
-      "type": "object",
-      "properties": {
-        "srcMobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Mobile"
-        },
-        "srcDesktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Desktop"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt",
-          "description": "Image alt text"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href",
-          "description": "When you click you go to"
-        }
-      },
-      "required": [
-        "srcMobile",
-        "alt",
-        "href"
-      ],
-      "title": "Banner"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner"
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "itemsPerLine": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Mobile"
-            },
-            "desktop": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Items Per Line",
-          "description": "Default is 2 for mobile and all for desktop"
-        },
-        "borderRadius": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Mobile"
-            },
-            "desktop": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Border Radius",
-          "description": "Item's border radius in px"
-        },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner[]",
-          "title": "Banners"
-        }
-      },
-      "required": [
-        "itemsPerLine",
-        "borderRadius",
-        "banners"
-      ],
-      "title": "deco-sites/mambo/components/ui/BannerGrid.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link": {
       "type": "object",
       "properties": {
         "src": {
@@ -2316,13 +2213,17 @@
       ],
       "title": "Highlight"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight[]": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link"
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props": {
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social": {
       "type": "object",
       "properties": {
         "highlights": {
@@ -2338,6 +2239,130 @@
         "title"
       ],
       "title": "deco-sites/mambo/components/ui/Highlights.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder",
+          "description": "Search bar default placeholder message",
+          "default": "What are you looking for?"
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Action",
+          "description": "When user clicks on the search button, navigate it to",
+          "default": "/s"
+        },
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link[]",
+          "title": "Links"
+        },
+        "bgImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Bg Image"
+        },
+        "avatar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Avatar"
+        },
+        "social": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social[]",
+          "title": "Social"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/mambo/components/ui/LinkTree.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner": {
+      "type": "object",
+      "properties": {
+        "matcher": {
+          "type": "string",
+          "title": "Matcher",
+          "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title",
+          "description": "text to be rendered on top of the image"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle",
+          "description": "text to be rendered on top of the image"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "desktop",
+            "mobile"
+          ],
+          "title": "Image"
+        }
+      },
+      "required": [
+        "matcher",
+        "image"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner[]",
+          "title": "Banners"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/mambo/components/ui/BannerPLP.tsx@Props"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hiYXIudHN4@EditableProps": {
       "type": "object",
@@ -2381,6 +2406,215 @@
       "title": "EditableProps"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label"
+              },
+              "href": {
+                "type": "string",
+                "title": "Href"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Label"
+                    },
+                    "href": {
+                      "type": "string",
+                      "title": "Href"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ]
+                },
+                "title": "Children"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          },
+          "title": "Children"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [],
+          "title": "Image"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "NavItem"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "alert": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "image": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Image"
+            }
+          },
+          "required": [
+            "title",
+            "image"
+          ],
+          "title": "Alert"
+        },
+        "searchbar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hiYXIudHN4@EditableProps",
+          "title": "Searchbar"
+        },
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem[]",
+          "title": "Nav Items",
+          "description": "Navigation items used both on mobile and desktop menus"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products",
+          "description": "Product suggestions displayed on search"
+        },
+        "suggestions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
+          "title": "Suggestions"
+        }
+      },
+      "required": [
+        "alert"
+      ],
+      "title": "deco-sites/mambo/components/header/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdFNoZWxmLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
+        },
+        "itemsPerPage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Items Per Page"
+        }
+      },
+      "required": [
+        "title",
+        "products"
+      ],
+      "title": "deco-sites/mambo/components/product/ProductShelf.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdEdhbGxlcnkudHN4@Columns": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Columns"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "aside"
+            },
+            {
+              "type": "string",
+              "const": "drawer"
+            }
+          ],
+          "type": "string",
+          "title": "Variant",
+          "description": "Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products"
+        },
+        "columns": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdEdhbGxlcnkudHN4@Columns",
+          "description": "Number of products per line on grid",
+          "title": "Columns"
+        }
+      },
+      "required": [
+        "page",
+        "columns"
+      ],
+      "title": "deco-sites/mambo/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature": {
       "type": "object",
       "properties": {
         "label": {
@@ -2553,121 +2787,122 @@
       ],
       "title": "deco-sites/mambo/components/search/SearchResult.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "matcher": {
-          "type": "string",
-          "title": "Matcher",
-          "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title",
-          "description": "text to be rendered on top of the image"
-        },
-        "subtitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subtitle",
-          "description": "text to be rendered on top of the image"
-        },
-        "image": {
-          "type": "object",
-          "properties": {
-            "desktop": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Desktop"
-            },
-            "mobile": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Mobile"
-            },
-            "alt": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Alt"
-            }
-          },
-          "required": [
-            "desktop",
-            "mobile"
-          ],
-          "title": "Image"
+        "features": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature[]",
+          "title": "Features"
         }
       },
       "required": [
-        "matcher",
-        "image"
+        "features"
+      ],
+      "title": "deco-sites/mambo/components/ui/Features.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt",
+          "description": "Image alt text"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href",
+          "description": "When you click you go to"
+        }
+      },
+      "required": [
+        "srcMobile",
+        "alt",
+        "href"
       ],
       "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner[]": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner"
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
-          "title": "Page"
-        },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner[]",
-          "title": "Banners"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/mambo/components/ui/BannerPLP.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdFNoZWxmLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props": {
       "type": "object",
       "properties": {
         "title": {
           "type": "string",
           "title": "Title"
         },
-        "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Products"
+        "itemsPerLine": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Mobile"
+            },
+            "desktop": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Desktop"
+            }
+          },
+          "required": [],
+          "title": "Items Per Line",
+          "description": "Default is 2 for mobile and all for desktop"
         },
-        "itemsPerPage": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Items Per Page"
+        "borderRadius": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Mobile"
+            },
+            "desktop": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Desktop"
+            }
+          },
+          "required": [],
+          "title": "Border Radius",
+          "description": "Item's border radius in px"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner[]",
+          "title": "Banners"
         }
       },
       "required": [
-        "title",
-        "products"
+        "itemsPerLine",
+        "borderRadius",
+        "banners"
       ],
-      "title": "deco-sites/mambo/components/product/ProductShelf.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "phone": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Phone"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/mambo/components/ui/WhatsApp.tsx@Props"
+      "title": "deco-sites/mambo/components/ui/BannerGrid.tsx@Props"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdERldGFpbHMudHN4@Props": {
       "type": "object",
@@ -2701,6 +2936,94 @@
       ],
       "title": "deco-sites/mambo/components/product/ProductDetails.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "desktop otimized image",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "mobile otimized image",
+          "title": "Mobile"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt",
+          "description": "Image's alt text"
+        },
+        "action": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "title": "Href"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "subTitle": {
+              "type": "string",
+              "title": "Sub Title"
+            },
+            "label": {
+              "type": "string",
+              "title": "Label"
+            }
+          },
+          "required": [
+            "href",
+            "title",
+            "subTitle",
+            "label"
+          ],
+          "title": "Action"
+        }
+      },
+      "required": [
+        "desktop",
+        "mobile",
+        "alt"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner[]",
+          "title": "Images"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Preload",
+          "description": "Check this option when this banner is the biggest image on the screen for image optimizations"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval",
+          "description": "time (in seconds) to start the carousel autoplay"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/mambo/components/ui/BannerCarousel.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem": {
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem": {
       "type": "object",
       "properties": {
@@ -2719,6 +3042,7 @@
       ],
       "title": "StringItem"
     },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem": {
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem": {
       "type": "object",
       "properties": {
@@ -2867,21 +3191,27 @@
       "title": "IconItem"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem"
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem"
         }
       ]
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem"
       }
     },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section": {
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section": {
       "type": "object",
       "properties": {
@@ -2890,6 +3220,7 @@
           "title": "Label"
         },
         "children": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]",
           "title": "Children"
         }
@@ -2901,62 +3232,51 @@
       "title": "Section"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]": {
       "type": "array",
       "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section"
         "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section"
       }
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props": {
       "type": "object",
       "properties": {
         "sections": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]",
           "title": "Sections"
         }
       },
       "required": [],
       "title": "deco-sites/mambo/components/footer/Footer.tsx@Props"
+      "title": "deco-sites/mambo/components/footer/Footer.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
+        "phone": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Phone"
         }
       },
-      "required": [
-        "label",
-        "href"
-      ],
-      "title": "Link"
+      "required": [],
+      "title": "deco-sites/mambo/components/ui/WhatsApp.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link"
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight": {
       "type": "object",
       "properties": {
-        "label": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            }
-          ],
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src"
+        },
+        "alt": {
           "type": "string",
-          "title": "Label"
+          "title": "Alt"
         },
         "href": {
           "type": "string",
@@ -2969,314 +3289,31 @@
       ],
       "title": "Social"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social[]": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight"
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props": {
       "type": "object",
       "properties": {
+        "highlights": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight[]",
+          "title": "Highlights"
+        },
         "title": {
           "type": [
             "string",
             "null"
           ],
           "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "links": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link[]",
-          "title": "Links"
-        },
-        "bgImage": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Bg Image"
-        },
-        "avatar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Avatar"
-        },
-        "social": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social[]",
-          "title": "Social"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/mambo/components/ui/LinkTree.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner": {
-      "type": "object",
-      "properties": {
-        "desktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "desktop otimized image",
-          "title": "Desktop"
-        },
-        "mobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "mobile otimized image",
-          "title": "Mobile"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt",
-          "description": "Image's alt text"
-        },
-        "action": {
-          "type": "object",
-          "properties": {
-            "href": {
-              "type": "string",
-              "title": "Href"
-            },
-            "title": {
-              "type": "string",
-              "title": "Title"
-            },
-            "subTitle": {
-              "type": "string",
-              "title": "Sub Title"
-            },
-            "label": {
-              "type": "string",
-              "title": "Label"
-            }
-          },
-          "required": [
-            "href",
-            "title",
-            "subTitle",
-            "label"
-          ],
-          "title": "Action"
         }
       },
       "required": [
-        "desktop",
-        "mobile",
-        "alt"
+        "title"
       ],
-      "title": "Banner"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner"
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "images": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner[]",
-          "title": "Images"
-        },
-        "preload": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Preload",
-          "description": "Check this option when this banner is the biggest image on the screen for image optimizations"
-        },
-        "interval": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Interval",
-          "description": "time (in seconds) to start the carousel autoplay"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/mambo/components/ui/BannerCarousel.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature": {
-      "type": "object",
-      "properties": {
-        "icon": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "ChevronLeft"
-            },
-            {
-              "type": "string",
-              "const": "ChevronRight"
-            },
-            {
-              "type": "string",
-              "const": "ChevronUp"
-            },
-            {
-              "type": "string",
-              "const": "ChevronDown"
-            },
-            {
-              "type": "string",
-              "const": "QuestionMarkCircle"
-            },
-            {
-              "type": "string",
-              "const": "User"
-            },
-            {
-              "type": "string",
-              "const": "ShoppingCart"
-            },
-            {
-              "type": "string",
-              "const": "Bars3"
-            },
-            {
-              "type": "string",
-              "const": "Heart"
-            },
-            {
-              "type": "string",
-              "const": "MagnifyingGlass"
-            },
-            {
-              "type": "string",
-              "const": "XMark"
-            },
-            {
-              "type": "string",
-              "const": "Plus"
-            },
-            {
-              "type": "string",
-              "const": "Minus"
-            },
-            {
-              "type": "string",
-              "const": "MapPin"
-            },
-            {
-              "type": "string",
-              "const": "Phone"
-            },
-            {
-              "type": "string",
-              "const": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard"
-            },
-            {
-              "type": "string",
-              "const": "Visa"
-            },
-            {
-              "type": "string",
-              "const": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Logo"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            },
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Tiktok"
-            },
-            {
-              "type": "string",
-              "const": "Truck"
-            },
-            {
-              "type": "string",
-              "const": "Discount"
-            },
-            {
-              "type": "string",
-              "const": "Return"
-            },
-            {
-              "type": "string",
-              "const": "CreditCard"
-            },
-            {
-              "type": "string",
-              "const": "Deco"
-            },
-            {
-              "type": "string",
-              "const": "Discord"
-            },
-            {
-              "type": "string",
-              "const": "Trash"
-            },
-            {
-              "type": "string",
-              "const": "FilterList"
-            },
-            {
-              "type": "string",
-              "const": "WhatsApp"
-            },
-            {
-              "type": "string",
-              "const": "ArrowsPointingOut"
-            }
-          ],
-          "type": "string",
-          "title": "Icon",
-          "description": "Image src"
-        },
-        "title": {
-          "type": "string",
-          "title": "Title",
-          "description": "Title"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description",
-          "description": "Description and Image alt text"
-        }
-      },
-      "required": [
-        "icon",
-        "title",
-        "description"
-      ],
-      "title": "Feature"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature"
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "features": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature[]",
-          "title": "Features"
-        }
-      },
-      "required": [
-        "features"
-      ],
-      "title": "deco-sites/mambo/components/ui/Features.tsx@Props"
+      "title": "deco-sites/mambo/components/ui/Highlights.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
@@ -4063,6 +4100,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
+      "title": "./islands/SliderJS.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SliderJS.tsx"
+          ],
+          "default": "./islands/SliderJS.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -4079,8 +4132,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4": {
-      "title": "./islands/ProductImageZoom.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA==": {
+      "title": "./islands/SearchControls.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -4089,15 +4142,20 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/ProductImageZoom.tsx"
+            "./islands/SearchControls.tsx"
           ],
-          "default": "./islands/ProductImageZoom.tsx"
+          "default": "./islands/SearchControls.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4": {
-      "title": "./islands/ViewSendEvent.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlclNlYXJjaE1lbnUudHN4": {
+      "title": "./islands/HeaderSearchMenu.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -4105,9 +4163,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/ViewSendEvent.tsx"
+            "./islands/HeaderSearchMenu.tsx"
           ],
-          "default": "./islands/ViewSendEvent.tsx"
+          "default": "./islands/HeaderSearchMenu.tsx"
         }
       }
     },
@@ -4132,8 +4190,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA==": {
-      "title": "./islands/SearchControls.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4": {
+      "title": "./islands/ViewSendEvent.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -4142,14 +4200,14 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/SearchControls.tsx"
+            "./islands/ViewSendEvent.tsx"
           ],
-          "default": "./islands/SearchControls.tsx"
+          "default": "./islands/ViewSendEvent.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlclNlYXJjaE1lbnUudHN4": {
-      "title": "./islands/HeaderSearchMenu.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA==": {
+      "title": "./islands/WishlistButton.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -4158,9 +4216,25 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/HeaderSearchMenu.tsx"
+            "./islands/WishlistButton.tsx"
           ],
-          "default": "./islands/HeaderSearchMenu.tsx"
+          "default": "./islands/WishlistButton.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4": {
+      "title": "./islands/ProductImageZoom.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ProductImageZoom.tsx"
+          ],
+          "default": "./islands/ProductImageZoom.tsx"
         }
       }
     },
@@ -4180,22 +4254,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g=": {
-      "title": "./islands/AddToCartButton.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/AddToCartButton.tsx"
-          ],
-          "default": "./islands/AddToCartButton.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
       "title": "./islands/HeaderModals.tsx",
       "type": "object",
@@ -4212,8 +4270,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
-      "title": "./islands/SliderJS.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g=": {
+      "title": "./islands/AddToCartButton.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -4222,25 +4280,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/SliderJS.tsx"
+            "./islands/AddToCartButton.tsx"
           ],
-          "default": "./islands/SliderJS.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA==": {
-      "title": "./islands/WishlistButton.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/WishlistButton.tsx"
-          ],
-          "default": "./islands/WishlistButton.tsx"
+          "default": "./islands/AddToCartButton.tsx"
         }
       }
     },
@@ -4349,12 +4391,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA==": {
-      "title": "deco-sites/mambo/sections/BannerGrid.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9MaW5rVHJlZS50c3g=": {
+      "title": "deco-sites/mambo/sections/LinkTree.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -4364,18 +4406,18 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/BannerGrid.tsx"
+            "deco-sites/mambo/sections/LinkTree.tsx"
           ],
-          "default": "deco-sites/mambo/sections/BannerGrid.tsx"
+          "default": "deco-sites/mambo/sections/LinkTree.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==": {
-      "title": "deco-sites/mambo/sections/Highlights.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJQTFAudHN4": {
+      "title": "deco-sites/mambo/sections/BannerPLP.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Props"
         }
       ],
       "required": [
@@ -4385,9 +4427,25 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/Highlights.tsx"
+            "deco-sites/mambo/sections/BannerPLP.tsx"
           ],
-          "default": "deco-sites/mambo/sections/Highlights.tsx"
+          "default": "deco-sites/mambo/sections/BannerPLP.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0uc3RvcnkudHN4": {
+      "title": "deco-sites/mambo/sections/DesignSystem.story.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/DesignSystem.story.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/DesignSystem.story.tsx"
         }
       }
     },
@@ -4428,69 +4486,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4": {
-      "title": "deco-sites/mambo/sections/SearchResult.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/SearchResult.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/SearchResult.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJQTFAudHN4": {
-      "title": "deco-sites/mambo/sections/BannerPLP.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/BannerPLP.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/BannerPLP.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4": {
-      "title": "deco-sites/mambo/sections/WishlistGallery.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/WishlistGallery.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/WishlistGallery.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Qcm9kdWN0U2hlbGYudHN4": {
       "title": "deco-sites/mambo/sections/ProductShelf.tsx",
       "type": "object",
@@ -4512,12 +4507,15 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaGF0c0FwcC50c3g=": {
-      "title": "deco-sites/mambo/sections/WhatsApp.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4": {
+      "title": "deco-sites/mambo/sections/WishlistGallery.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4": {
+      "title": "deco-sites/mambo/sections/WishlistGallery.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props"
         }
       ],
       "required": [
@@ -4527,15 +4525,22 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/WhatsApp.tsx"
+            "deco-sites/mambo/sections/WishlistGallery.tsx"
+            "deco-sites/mambo/sections/WishlistGallery.tsx"
           ],
-          "default": "deco-sites/mambo/sections/WhatsApp.tsx"
+          "default": "deco-sites/mambo/sections/WishlistGallery.tsx"
+          "default": "deco-sites/mambo/sections/WishlistGallery.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0uc3RvcnkudHN4": {
-      "title": "deco-sites/mambo/sections/DesignSystem.story.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9GZWF0dXJlcy50c3g=": {
+      "title": "deco-sites/mambo/sections/Features.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -4543,9 +4548,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/DesignSystem.story.tsx"
+            "deco-sites/mambo/sections/Features.tsx"
           ],
-          "default": "deco-sites/mambo/sections/DesignSystem.story.tsx"
+          "default": "deco-sites/mambo/sections/Features.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA==": {
+      "title": "deco-sites/mambo/sections/BannerGrid.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/BannerGrid.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/BannerGrid.tsx"
         }
       }
     },
@@ -4570,12 +4596,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Gb290ZXIudHN4": {
-      "title": "deco-sites/mambo/sections/Footer.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4": {
+      "title": "deco-sites/mambo/sections/SearchResult.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hSZXN1bHQudHN4@Props"
         }
       ],
       "required": [
@@ -4585,30 +4611,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/Footer.tsx"
+            "deco-sites/mambo/sections/SearchResult.tsx"
           ],
-          "default": "deco-sites/mambo/sections/Footer.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9MaW5rVHJlZS50c3g=": {
-      "title": "deco-sites/mambo/sections/LinkTree.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/LinkTree.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/LinkTree.tsx"
+          "default": "deco-sites/mambo/sections/SearchResult.tsx"
         }
       }
     },
@@ -4633,12 +4638,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9GZWF0dXJlcy50c3g=": {
-      "title": "deco-sites/mambo/sections/Features.tsx",
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Gb290ZXIudHN4": {
+      "title": "deco-sites/mambo/sections/Footer.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props"
         }
       ],
       "required": [
@@ -4648,9 +4653,51 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mambo/sections/Features.tsx"
+            "deco-sites/mambo/sections/Footer.tsx"
           ],
-          "default": "deco-sites/mambo/sections/Features.tsx"
+          "default": "deco-sites/mambo/sections/Footer.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaGF0c0FwcC50c3g=": {
+      "title": "deco-sites/mambo/sections/WhatsApp.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/WhatsApp.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/WhatsApp.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==": {
+      "title": "deco-sites/mambo/sections/Highlights.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/Highlights.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/Highlights.tsx"
         }
       }
     },
@@ -5171,16 +5218,10 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
@@ -5189,19 +5230,25 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlclNlYXJjaE1lbnUudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         }
       ]
     },
@@ -5243,10 +5290,13 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9MaW5rVHJlZS50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJQTFAudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0uc3RvcnkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Db29raWVDb25zZW50LnRzeA=="
@@ -5255,37 +5305,35 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IZWFkZXIudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJQTFAudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4"
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Qcm9kdWN0U2hlbGYudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaGF0c0FwcC50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0uc3RvcnkudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Qcm9kdWN0RGV0YWlscy50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Gb290ZXIudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9MaW5rVHJlZS50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9DYXJvdXNlbC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9Gb290ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaGF0c0FwcC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA=="
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4"
@@ -5415,3 +5463,4 @@
     }
   }
 }
+

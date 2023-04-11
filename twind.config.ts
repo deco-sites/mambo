@@ -42,6 +42,7 @@ const options: Omit<Options, "selfURL"> = {
       colors: {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
+        "primary": "#f44237",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
         "interactive": "#161616",
@@ -119,6 +120,7 @@ const options: Omit<Options, "selfURL"> = {
     fontFamily: {
       sans: ["Albert Sans", "sans-serif"],
       serif: ["inherit", "serif"],
+      mont: ["Montserrat", "sans-serif"],
     },
     screens: {
       sm: "640px",
