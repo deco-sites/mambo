@@ -14,7 +14,10 @@ function Alert({ title, image }: Props) {
   const id = useId();
 
   return (
-    <div id={id} class="bg-primary gap-6 scrollbar-none h-[50px]  hidden lg:flex font-mont">
+    <div
+      id={id}
+      class="bg-primary gap-6 scrollbar-none h-[50px]  hidden lg:flex font-mont"
+    >
       <div class="flex justify-center items-center  w-screen h-full">
         <Text
           class="text-lg"
@@ -24,7 +27,7 @@ function Alert({ title, image }: Props) {
           {title}
         </Text>
         <Image
-        class="ml-2 max-h-full bg-cover"
+          class="ml-2 max-h-full bg-cover"
           src={image}
           width={65}
           height={40}
