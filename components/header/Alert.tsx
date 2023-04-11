@@ -7,7 +7,6 @@ import { useId } from "preact/hooks";
 export interface Props {
   title: string;
   image: LiveImage;
-  interval?: number;
 }
 
 function Alert({ title, image }: Props) {
