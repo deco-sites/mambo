@@ -18,7 +18,7 @@ function Alert({ image }: Props) {
     >
       <div class="flex justify-center items-center  w-screen h-full">
         <Image
-          class="ml-2 max-h-full"
+          class="max-h-full h-[50px] object-fit"
           src={image}
           width={1846}
           height={48}
