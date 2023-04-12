@@ -28,7 +28,7 @@ export interface NavItem {
 
 export interface Props {
   Alert: LiveImage;
-  
+
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**
