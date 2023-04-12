@@ -1,4 +1,3 @@
-export type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
