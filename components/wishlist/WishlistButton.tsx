@@ -50,6 +50,7 @@ function WishlistButton({ variant = "icon", ...item }: Props) {
         id="Heart"
         width={20}
         height={20}
+        class="h-[24px] w-[24px]"
         strokeWidth={2}
         fill={isInsideWishlist ? "black" : "none"}
       />

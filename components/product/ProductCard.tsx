@@ -7,6 +7,7 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -64,35 +65,30 @@ function ProductCard({ product, preload, itemListName }: Props) {
     <div
       data-deco="view-product"
       id={`product-card-${productID}`}
-      class="w-full group"
+      class=" group max-w-[240px]"
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">
-          <div class="absolute top-0 right-0">
+          <div class="absolute flex justify-center  top-0 left-0 bg-white w-[34px] h-[34px] px-0  rounded-full shadow">
             <WishlistIcon
               productId={isVariantOf?.productGroupID}
               sku={productID}
               title={name}
             />
           </div>
-          <Image
-            src={front.url!}
-            alt={front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full group-hover:hidden"
-            preload={preload}
-            loading={preload ? "eager" : "lazy"}
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full hidden group-hover:block"
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
+          <div class="p-10">
+            <Image
+              src={front.url!}
+              alt={front.alternateName}
+              width={200}
+              height={279}
+              class=" w-full"
+              preload={preload}
+              loading={preload ? "eager" : "lazy"}
+              sizes=""
+            />
+          </div>
+
           {seller && (
             <div
               class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
@@ -102,7 +98,15 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
+              <Button as="a" href={product.url}>
+                <Icon
+                  id="Heart"
+                  width={20}
+                  height={20}
+                  strokeWidth={2}
+                  fill="black"
+                />
+              </Button>
               {/* FIXME: Understand why fresh breaks rendering this component */}
               {
                 /* <SendEventButton
@@ -137,16 +141,23 @@ function ProductCard({ product, preload, itemListName }: Props) {
             {name}
           </Text>
           <div class="flex items-center gap-2">
-            <Text
-              class="line-through"
-              variant="list-price"
-              tone="subdued"
-            >
-              {formatPrice(listPrice, offers!.priceCurrency!)}
+            <div class="flex flex-col gap-1">
+              <Text
+                class="line-through"
+                variant="list-price"
+                tone="subdued"
+              >
+                {formatPrice(listPrice, offers!.priceCurrency!)}
+              </Text>
+              <Text variant="caption" tone="price">
+                {formatPrice(price, offers!.priceCurrency!)}
+              </Text>
+            </div>
+
+            <Text variant="caption" tone="subdued">
+              -25%
             </Text>
-            <Text variant="caption" tone="price">
-              {formatPrice(price, offers!.priceCurrency!)}
-            </Text>
+            `
           </div>
         </div>
       </a>
