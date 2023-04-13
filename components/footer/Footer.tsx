@@ -101,23 +101,28 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
 
       <FooterContainer class="bg-white w-full">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-32 mx-5">
+        <ul class="hidden sm:flex flex-row gap-20 mx-5">
           {links.map((link) => (
             <li>
               <div>
-                <Text variant="heading-3" tone="default" class="uppercase">
+                <Text
+                  variant="heading-3"
+                  class="uppercase text-[#7A7A7A]"
+                >
                   {link.title}
                 </Text>
 
                 <ul
                   class={`flex ${
                     isIcon(link.items[0]) ? "flex-col" : "flex-col"
-                  } gap-3 pt-2 flex-wrap`}
+                  } gap-3 pt-10 flex-wrap`}
                 >
                   {link.items.map((item) => (
                     <li class="flex flex-row gap-2">
                       <SectionItem item={item} />
-                      <Text class="hover:font-black">{item.title}</Text>
+                      <Text class="text-[#7A7A7A] text-sm hover:font-black">
+                        {item.title}
+                      </Text>
                     </li>
                   ))}
                 </ul>
@@ -126,9 +131,11 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
           ))}
           <li>
             <div>
-              <Text variant="heading-3">Dúvidas ou Suporte:</Text>
+              <Text variant="heading-3" class="text-[#7A7A7A]">
+                Dúvidas ou Suporte:
+              </Text>
               <ul>
-                <li class="flex flex-col mt-10">
+                <li class="flex flex-col mt-10 text-body">
                   <Text variant="heading-3" class="font-black">
                     Regiões Metropolitanas
                   </Text>
@@ -145,9 +152,9 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
                 <Text variant="heading-3" class="font-bold">
                   Siga-nos nas redes sociais
                 </Text>
-                <div class="flex flex-row">
+                <div class="flex flex-row gap-2 mt-5">
                   {social.map((item) => (
-                    <li class="gap-2">
+                    <li>
                       <Icon
                         media="(min-width: 768px)"
                         id={item.icon}
@@ -193,6 +200,50 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
       </FooterContainer>
 
       <FooterContainer class="flex justify-between w-full bg-white gap-20">
+        <div class="flex flex-col mx-5">
+          <Text>
+            Aceitamos somente os seguintes cartões de crédito:
+          </Text>
+          <div class="flex flex-row gap-2 mt-2">
+            <Icon
+              media="(min-width: 768px)"
+              id={"Visa"}
+              width={30}
+              height={25}
+              strokeWidth={0.05}
+              class="text-red-600"
+            />
+            <Icon
+              media="(min-width: 768px)"
+              id={"Mastercard"}
+              width={30}
+              height={25}
+              strokeWidth={0.05}
+              class="text-red-600"
+            />
+            <Icon
+              media="(min-width: 768px)"
+              id={"Elo"}
+              width={30}
+              height={25}
+              strokeWidth={0.05}
+              class="text-red-600"
+            />
+          </div>
+        </div>
+        <div class="text-[#807C78] text-sm mr-5">
+          <Text class="text-sm">Certificados e Segurança</Text>
+          <Image
+            src={copyright.logo}
+            alt="logo"
+            width={200}
+            height={100}
+            class="object-fill object-center mx-5"
+          />
+        </div>
+      </FooterContainer>
+
+      <FooterContainer class="flex justify-between w-full bg-[#F8F8F8] gap-20">
         <Image
           src={copyright.logo}
           alt="logo"
@@ -200,11 +251,11 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
           height={100}
           class="object-fill object-center mx-5"
         />
-        <div>
-          {copyright.lines}
-        </div>
-        <div>
-          <h1>Desenvolvido por mim mesmo</h1>
+        <ul class="text-[#36403B] text-sm">
+          {copyright.lines.map((lines) => <li>{lines}</li>)}
+        </ul>
+        <div class="text-[#807C78] text-sm mr-5">
+          <Text>Desenvolvido por mim mesmo</Text>
         </div>
       </FooterContainer>
 
