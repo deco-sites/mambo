@@ -60,7 +60,7 @@ function Header(
 ) {
   const searchbar = { ..._searchbar, products, suggestions };
   return (
-    <header class={`h-[${headerHeight}]`}>
+    <header class={`lg:h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
         <Alert
           image={alert}
