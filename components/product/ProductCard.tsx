@@ -113,17 +113,18 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-          
-              
-                 {/* <Button as="a" href={product.url}>
+
+              {
+                /* <Button as="a" href={product.url}>
                 <Icon
           id="ArrowsPointingOut"
           size={20}
           stroke="currentColor"
           strokeWidth={2}
         />
-              </Button>  */}
-              
+              </Button>  */
+              }
+
               {/* FIXME: Understand why fresh breaks rendering this component */}
               {
                 /* <SendEventButton

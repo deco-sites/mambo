@@ -75,7 +75,6 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
 
   return (
     <>
-    
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
@@ -86,54 +85,52 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         <h1>
           <Text variant="heading-3">{name}</Text>
         </h1>
-        <Text
-          class="mt-2 text-[13px] font-bold tracking-[0.5px]"
-        >
+        <Text class="mt-2 text-[13px] font-bold tracking-[0.5px]">
           {product.identifier}
         </Text>
       </div>
       {/* Prices */}
-      
-      <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
-              &#9733;&#9733;&#9733;&#9733;&#9733;
-            </span>
-      <div class="flex items-center gap-2">
-            <div class="flex flex-col gap-1">
-              <div class="flex min-h-[12px]">
-                {isOnSale && (
-                  <Text
-                    class="line-through text-[13px] "
-                    variant="list-price"
-                    tone="subdued"
-                  >
-                    {formatPrice(listPrice, offers!.priceCurrency!)}
-                  </Text>
-                )}
-              </div>
 
-              <div class="max-h-[21px]">
-                <Text
-                  variant="caption"
-                  class={`text-base font-bold  ${
-                    isOnSale ? "text-price" : "text-black"
-                  }`}
-                >
-                  {formatPrice(price, offers!.priceCurrency!)}
-                </Text>
-                {isOnSale && (
-                  <Text
-                    variant="caption"
-                    tone="subdued"
-                    class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
-                  >
-                    - {saleDiscount}%
-                  </Text>
-                )}
-              </div>
-            </div>
+      <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
+        &#9733;&#9733;&#9733;&#9733;&#9733;
+      </span>
+      <div class="flex items-center gap-2">
+        <div class="flex flex-col gap-1">
+          <div class="flex min-h-[12px]">
+            {isOnSale && (
+              <Text
+                class="line-through text-[13px] "
+                variant="list-price"
+                tone="subdued"
+              >
+                {formatPrice(listPrice, offers!.priceCurrency!)}
+              </Text>
+            )}
           </div>
+
+          <div class="max-h-[21px]">
+            <Text
+              variant="caption"
+              class={`text-base font-bold  ${
+                isOnSale ? "text-price" : "text-black"
+              }`}
+            >
+              {formatPrice(price, offers!.priceCurrency!)}
+            </Text>
+            {isOnSale && (
+              <Text
+                variant="caption"
+                tone="subdued"
+                class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
+              >
+                - {saleDiscount}%
+              </Text>
+            )}
+          </div>
+        </div>
+      </div>
       {/* Sku Selector */}
-  
+
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
         {seller && (
@@ -146,7 +143,6 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
             productGroupId={product.isVariantOf?.productGroupID ?? ""}
           />
         )}
-        
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">
@@ -205,16 +201,15 @@ function Details({
   if (variant === "slider") {
     return (
       <>
-           <Breadcrumb
-        itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
-      />
+        <Breadcrumb
+          itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
+        />
         <div
           id={id}
           class={` grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
             (HEIGHT / WIDTH).toFixed(2)
           }*40vw)])`}
         >
-       
           {/* Image Slider */}
           <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
             <Slider class="gap-6">
