@@ -64,50 +64,76 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
     productID,
     offers,
     name,
-    gtin,
+    brand,
     isVariantOf,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
+  const isOnSale = listPrice !== price;
+  const saleDiscount = price?.toString() && listPrice?.toString() && Math.round(
+    ((listPrice - price) / listPrice) * 100,
+  );
 
   return (
     <>
-      {/* Breadcrumb */}
-      <Breadcrumb
-        itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
-      />
+    
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
           <Text tone="subdued" variant="caption">
-            Cod. {gtin}
+            {brand}
           </Text>
         </div>
         <h1>
           <Text variant="heading-3">{name}</Text>
         </h1>
-      </div>
-      {/* Prices */}
-      <div class="mt-4">
-        <div class="flex flex-row gap-2 items-center">
-          <Text
-            class="line-through"
-            tone="subdued"
-            variant="list-price"
-          >
-            {formatPrice(listPrice, offers!.priceCurrency!)}
-          </Text>
-          <Text tone="price" variant="heading-3">
-            {formatPrice(price, offers!.priceCurrency!)}
-          </Text>
-        </div>
-        <Text tone="subdued" variant="caption">
-          {installments}
+        <Text
+          class="mt-2 text-[13px] font-bold tracking-[0.5px]"
+        >
+          {product.identifier}
         </Text>
       </div>
+      {/* Prices */}
+      
+      <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </span>
+      <div class="flex items-center gap-2">
+            <div class="flex flex-col gap-1">
+              <div class="flex min-h-[12px]">
+                {isOnSale && (
+                  <Text
+                    class="line-through text-[13px] "
+                    variant="list-price"
+                    tone="subdued"
+                  >
+                    {formatPrice(listPrice, offers!.priceCurrency!)}
+                  </Text>
+                )}
+              </div>
+
+              <div class="max-h-[21px]">
+                <Text
+                  variant="caption"
+                  class={`text-base font-bold  ${
+                    isOnSale ? "text-price" : "text-black"
+                  }`}
+                >
+                  {formatPrice(price, offers!.priceCurrency!)}
+                </Text>
+                {isOnSale && (
+                  <Text
+                    variant="caption"
+                    tone="subdued"
+                    class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
+                  >
+                    - {saleDiscount}%
+                  </Text>
+                )}
+              </div>
+            </div>
+          </div>
       {/* Sku Selector */}
-      <div class="mt-4 sm:mt-6">
-        <ProductSelector product={product} />
-      </div>
+  
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
         {seller && (
@@ -120,12 +146,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
             productGroupId={product.isVariantOf?.productGroupID ?? ""}
           />
         )}
-        <WishlistButton
-          variant="full"
-          productId={isVariantOf?.productGroupID}
-          sku={productID}
-          title={name}
-        />
+        
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">
@@ -184,19 +205,23 @@ function Details({
   if (variant === "slider") {
     return (
       <>
+           <Breadcrumb
+        itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
+      />
         <div
           id={id}
-          class={`grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
+          class={` grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
             (HEIGHT / WIDTH).toFixed(2)
           }*40vw)])`}
         >
+       
           {/* Image Slider */}
           <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
             <Slider class="gap-6">
               {images.map((img, index) => (
                 <Image
                   class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
-                  sizes="(max-width: 640px) 100vw, 40vw"
+                  sizes="(max-width: 640px) "
                   style={{ aspectRatio: ASPECT_RATIO }}
                   src={img.url!}
                   alt={img.alternateName}
@@ -244,7 +269,7 @@ function Details({
           </SliderDots>
 
           {/* Product Info */}
-          <div class="px-4 sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
+          <div class=" px-4 sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
             <ProductInfo page={page} />
           </div>
         </div>
@@ -262,7 +287,7 @@ function Details({
   return (
     <div class="grid grid-cols-1 gap-4 sm:(grid-cols-[50vw_25vw] grid-rows-1 justify-center)">
       {/* Image slider */}
-      <Slider class="gap-6">
+      <Slider class="gap-6 ">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
           <Image
             class={`scroll-snap-center min-w-[100vw] sm:(min-w-[24vw])`}
@@ -300,7 +325,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <Container class="py-0 sm:py-10">
+    <Container class="py-0 sm:py-10 ">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
     </Container>
   );
