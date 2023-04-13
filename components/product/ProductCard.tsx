@@ -79,7 +79,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
             />
           </div>
           <div class="absolute flex justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]">
-            <Text class="text-white  tracking-wider text-sm" >Adicionar</Text>
+            <Text class="text-white  tracking-wider text-sm">Adicionar</Text>
           </div>
           <div class=" max-h-[229px]
           
@@ -97,7 +97,6 @@ function ProductCard({ product, preload, itemListName }: Props) {
               "
               preload={preload}
               loading={preload ? "eager" : "lazy"}
-             
             />
           </div>
 
@@ -110,7 +109,8 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-              {/* <Button as="a" href={product.url}>
+              {
+                /* <Button as="a" href={product.url}>
                 <Icon
                   id="Heart"
                   width={20}
@@ -118,7 +118,8 @@ function ProductCard({ product, preload, itemListName }: Props) {
                   strokeWidth={2}
                   fill="black"
                 />
-              </Button> */}
+              </Button> */
+              }
               {/* FIXME: Understand why fresh breaks rendering this component */}
               {
                 /* <SendEventButton
@@ -151,52 +152,46 @@ function ProductCard({ product, preload, itemListName }: Props) {
           >
             {name}
           </Text>
-          
-             <div class="flex items-center gap-2">
-             <div class="flex flex-col gap-1">
-              <div
-                class="flex min-h-[12px]"
-              >
-              {isOnSale && (
-               <Text
-                 class="line-through text-[13px] "
-                 variant="list-price"
-                 tone="subdued"
-               >
-                 {formatPrice(listPrice, offers!.priceCurrency!)}
-               </Text>)}
+
+          <div class="flex items-center gap-2">
+            <div class="flex flex-col gap-1">
+              <div class="flex min-h-[12px]">
+                {isOnSale && (
+                  <Text
+                    class="line-through text-[13px] "
+                    variant="list-price"
+                    tone="subdued"
+                  >
+                    {formatPrice(listPrice, offers!.priceCurrency!)}
+                  </Text>
+                )}
               </div>
-            
-               <div
-                  class="max-h-[21px]"
-               >
-                 <Text
-                   variant="caption"
-                   class={`text-base font-bold  ${isOnSale ? 'text-price' : 'text-black'}`}
-                   
-                 >
-                   {formatPrice(price, offers!.priceCurrency!)}
-                 </Text>
-                  {isOnSale && (
-                        <Text
-                        variant="caption"
-                        tone="subdued"
-                        class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
-                      >
-                        - {saleDiscount}%
-                      </Text>
-                  )} 
-             
-               </div>
-             </div>
-             
-           </div> 
-         
-           <Text
-              class="text-xs font-semibold text-units"
-           >
-                    1 un
-             </Text>
+
+              <div class="max-h-[21px]">
+                <Text
+                  variant="caption"
+                  class={`text-base font-bold  ${
+                    isOnSale ? "text-price" : "text-black"
+                  }`}
+                >
+                  {formatPrice(price, offers!.priceCurrency!)}
+                </Text>
+                {isOnSale && (
+                  <Text
+                    variant="caption"
+                    tone="subdued"
+                    class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
+                  >
+                    - {saleDiscount}%
+                  </Text>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <Text class="text-xs font-semibold text-units">
+            1 un
+          </Text>
         </div>
       </a>
     </div>
