@@ -7,7 +7,6 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -80,7 +79,9 @@ function ProductCard({ product, preload, itemListName }: Props) {
               title={name}
             />
           </div>
-          <div class="absolute flex justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]">
+          <div class="absolute flex justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
+            hover:bg-button-hover
+          ">
             <Text class="text-white  tracking-wider text-sm">Adicionar</Text>
           </div>
           <div class=" max-h-[229px]

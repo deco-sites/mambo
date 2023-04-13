@@ -43,6 +43,7 @@ const options: Omit<Options, "selfURL"> = {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
         "primary": "#f44237",
+        "button-hover": "#bf3726",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "discount": "#8cec8c",
         "footer": "#003232",
