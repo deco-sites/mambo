@@ -18,27 +18,20 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import { tw } from "https://esm.sh/v96/twind@0.16.17/twind.js";
 
-interface Dots {
-  products: Product[];
-}
+export type Banner = "Left" | "Right";
 
 export interface Props {
   title: string;
   products: LoaderReturnType<Product[] | null>;
   itemsPerPage?: number;
-  /** @title Left Banner */
-  leftBanner?: { image: LiveImage; alt: string; link: string };
-  /**
-   * @title Rigth Banner
-   */
-  rightBanner?: { image: LiveImage; alt: string; link: string };
+  /** @title Banner */
+  Banner?: { image: LiveImage; alt: string; link: string; side: Banner };
 }
 
 function ProductShelf({
   title,
   products,
-  leftBanner,
-  rightBanner,
+  Banner,
 }: Props) {
   const id = useId();
 
@@ -57,9 +50,9 @@ function ProductShelf({
     <Container
       id={id}
       class={`grid grid-cols-[40px_1fr_40px] font-mont lg:grid-cols-[${
-        leftBanner ? "auto_" : ""
+        Banner?.side === "Left" ? "auto_" : ""
       }40px_1fr_40px${
-        rightBanner ? "_auto" : ""
+        Banner?.side === "Right" ? "_auto" : ""
       }] grid-rows-[57px_1fr_40px_1fr_20px] items-center py-10 px-5`}
     >
       <div class="row-start-1 h-full items-center flex col-span-full col-end-8 justify-between w-full border-b">
@@ -80,15 +73,17 @@ function ProductShelf({
         </a>
       </div>
 
-      {leftBanner && (
+      {Banner && (
         <a
-          class="hidden lg:flex col-start-1 row-start-2 row-end-5  mr-2  items-center"
-          href={leftBanner.link}
+          class={`hidden lg:flex ${
+            Banner?.side === "Left" ? "col-start-1 mr-2" : "col-start-8 ml-2"
+          } row-start-2 row-end-5    items-center`}
+          href={Banner.link}
         >
           <Image
             class="rounded-[6px]"
-            src={leftBanner.image}
-            alt={leftBanner.alt}
+            src={Banner.image}
+            alt={Banner.alt}
             width={250}
             height={454}
           />
@@ -97,7 +92,7 @@ function ProductShelf({
 
       <Slider
         class={`gap-6 col-span-full ${
-          leftBanner ? "lg:col-start-2" : "col-start-1"
+          Banner?.side === "Left" ? "lg:col-start-2" : "col-start-1"
         }  row-start-2 row-end-5`}
         snap="snap-center sm:snap-start py-4 block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
       >
@@ -110,7 +105,7 @@ function ProductShelf({
       <>
         <div
           class={`relative z-10 col-start-1 ${
-            leftBanner ? "lg:col-start-2" : "col-start-1"
+            Banner?.side === "Left" ? "lg:col-start-2" : "col-start-1"
           } row-start-3 flex items-center justify-center  z-10 `}
         >
           <div class="absolute left-[-16px] flex items-center justify-center  bg-interactive-inverse rounded-full button-box-shadow">
@@ -147,20 +142,6 @@ function ProductShelf({
           </div>
         </div>
       </>
-      {rightBanner && (
-        <a
-          class="hidden lg:flex col-end-7 row-start-2 row-end-5  ml-2  items-center"
-          href={rightBanner.link}
-        >
-          <Image
-            class="rounded-[6px]"
-            src={rightBanner.image}
-            alt={rightBanner.alt}
-            width={250}
-            height={454}
-          />
-        </a>
-      )}
 
       <SliderControllerJS rootId={id} />
 

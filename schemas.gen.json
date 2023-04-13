@@ -2205,7 +2205,7 @@
           ],
           "title": "Items Per Page"
         },
-        "leftBanner": {
+        "Banner": {
           "type": "object",
           "properties": {
             "image": {
@@ -2219,37 +2219,29 @@
             "link": {
               "type": "string",
               "title": "Link"
+            },
+            "side": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Right"
+                }
+              ],
+              "type": "string",
+              "title": "Side"
             }
           },
           "required": [
             "image",
             "alt",
-            "link"
+            "link",
+            "side"
           ],
-          "title": "Left Banner"
-        },
-        "rightBanner": {
-          "type": "object",
-          "properties": {
-            "image": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Image"
-            },
-            "alt": {
-              "type": "string",
-              "title": "Alt"
-            },
-            "link": {
-              "type": "string",
-              "title": "Link"
-            }
-          },
-          "required": [
-            "image",
-            "alt",
-            "link"
-          ],
-          "title": "Right Banner"
+          "title": " Banner"
         }
       },
       "required": [
