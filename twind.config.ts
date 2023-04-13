@@ -189,6 +189,9 @@ const options: Omit<Options, "selfURL"> = {
         display: "none",
       },
     },
+    "button-box-shadow": {
+      "box-shadow": "0 4px 4px rgb(0 0 0 / 25%);",
+    },
   },
 };
 
