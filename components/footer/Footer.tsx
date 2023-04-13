@@ -65,8 +65,16 @@ function Footer({ sections = [] }: Props) {
     <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
       <div>
         <Container class="w-full flex flex-col divide-y-1 divide-default">
-          <FooterContainer>
-            <Newsletter />
+          <FooterContainer class="w-full bg-[#F0E6E6] px-0">
+            <Newsletter
+              icon={"teste"}
+              title={"Inscreva-se e receba nossas promoções e novidades exclusivas"}
+              button={"Enviar"}
+              placeholders={{
+                name: "Primeiro nome",
+                email: "Seu e-mail",
+              }}
+            />
           </FooterContainer>
 
           <FooterContainer>
