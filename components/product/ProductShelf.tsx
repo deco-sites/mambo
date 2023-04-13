@@ -77,7 +77,7 @@ function ProductShelf({
         <a
           class={`hidden lg:flex ${
             Banner?.side === "Left" ? "col-start-1 mr-2" : "col-start-8 ml-2"
-          } row-start-2 row-end-5    items-center`}
+          } row-start-2 row-end-5 py-3  items-center`}
           href={Banner.link}
         >
           <Image
