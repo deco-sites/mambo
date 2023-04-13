@@ -20,10 +20,9 @@ function Sizes(product: Product) {
   );
 
   return (
-    <ul class="flex justify-center items-center gap-2">
+    <ul class="flex justify-center items-center gap-2 ">
       {options.map(([value, urls]) => {
         const url = urls.find((url) => url === product.url) || urls[0];
-
         return (
           <a href={url}>
             <Avatar
@@ -56,53 +55,74 @@ function ProductCard({ product, preload, itemListName }: Props) {
     image: images,
     offers,
     isVariantOf,
+    sku,
   } = product;
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
+  const isOnSale = listPrice !== price;
+  const saleDiscount = price?.toString() && listPrice?.toString() && Math.round(
+    ((listPrice - price) / listPrice) * 100,
+  );
 
   return (
     <div
       data-deco="view-product"
       id={`product-card-${productID}`}
-      class="w-full group"
+      class=" group max-w-[240px] font-mont "
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">
-          <div class="absolute top-0 right-0">
+          <div class="absolute flex justify-center  top-0 left-0 bg-white w-[34px] h-[34px] px-0  rounded-full shadow">
             <WishlistIcon
               productId={isVariantOf?.productGroupID}
               sku={productID}
               title={name}
             />
           </div>
-          <Image
-            src={front.url!}
-            alt={front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full group-hover:hidden"
-            preload={preload}
-            loading={preload ? "eager" : "lazy"}
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full hidden group-hover:block"
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
+          <div class="absolute flex justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
+            hover:bg-button-hover
+          ">
+            <Text class="text-white  tracking-wider text-sm">Adicionar</Text>
+          </div>
+          <div class=" max-h-[229px]
+          
+          ">
+            <Image
+              src={front.url!}
+              alt={front.alternateName}
+              width={200}
+              height={279}
+              class=" 
+              object-contain
+              object-center
+              w-full
+              max-h-[229px]
+              "
+              preload={preload}
+              loading={preload ? "eager" : "lazy"}
+            />
+          </div>
+
           {seller && (
             <div
-              class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
+              class="  absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 backdropFilter: "blur(2px)",
               }}
             >
               <Sizes {...product} />
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
+              {
+                /* <Button as="a" href={product.url}>
+                <Icon
+                  id="Heart"
+                  width={20}
+                  height={20}
+                  strokeWidth={2}
+                  fill="black"
+                />
+              </Button> */
+              }
               {/* FIXME: Understand why fresh breaks rendering this component */}
               {
                 /* <SendEventButton
@@ -128,26 +148,53 @@ function ProductCard({ product, preload, itemListName }: Props) {
             </div>
           )}
         </div>
-
-        <div class="flex flex-col gap-1 py-2">
+        <div class="flex flex-col gap-1 py-2 font-medium">
           <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap"
+            class=" flex-wrap text-sm max-w-[165px] h-[60px] text-product"
             variant="caption"
           >
             {name}
           </Text>
+
           <div class="flex items-center gap-2">
-            <Text
-              class="line-through"
-              variant="list-price"
-              tone="subdued"
-            >
-              {formatPrice(listPrice, offers!.priceCurrency!)}
-            </Text>
-            <Text variant="caption" tone="price">
-              {formatPrice(price, offers!.priceCurrency!)}
-            </Text>
+            <div class="flex flex-col gap-1">
+              <div class="flex min-h-[12px]">
+                {isOnSale && (
+                  <Text
+                    class="line-through text-[13px] "
+                    variant="list-price"
+                    tone="subdued"
+                  >
+                    {formatPrice(listPrice, offers!.priceCurrency!)}
+                  </Text>
+                )}
+              </div>
+
+              <div class="max-h-[21px]">
+                <Text
+                  variant="caption"
+                  class={`text-base font-bold  ${
+                    isOnSale ? "text-price" : "text-black"
+                  }`}
+                >
+                  {formatPrice(price, offers!.priceCurrency!)}
+                </Text>
+                {isOnSale && (
+                  <Text
+                    variant="caption"
+                    tone="subdued"
+                    class="ml-2.5 bg-discount bg-opacity-[47%] text-discount-text rounded-[4px] px-1.5 py-[3px] font-bold"
+                  >
+                    - {saleDiscount}%
+                  </Text>
+                )}
+              </div>
+            </div>
           </div>
+
+          <Text class="text-xs font-semibold text-units">
+            1 un
+          </Text>
         </div>
       </a>
     </div>

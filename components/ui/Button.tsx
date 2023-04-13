@@ -22,7 +22,7 @@ const variants = {
   alternative:
     "px-3 bg-primary text-white font-medium rounded py-1 px-6 border-none",
   icon:
-    "h-[36px] px-2 rounded-full bg-transparent text-default border-transparent hover:bg-hover active:border-interactive disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
+    "h-[36px] px-2 rounded-full bg-transparent text-default border-transparent  active:border-interactive disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>(({
