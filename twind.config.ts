@@ -44,6 +44,7 @@ const options: Omit<Options, "selfURL"> = {
         "header": "#FFFFFF",
         "primary": "#f44237",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
+        "discount": "#8cec8c",
         "footer": "#003232",
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
@@ -55,7 +56,10 @@ const options: Omit<Options, "selfURL"> = {
         "default-inverse": "#FFFFFF",
         "subdued": "#66736C",
         "subdued-inverse": "#C6C6C6",
-        "price": "#8C3D3D",
+        "price": "#f44237",
+        "product": "#707070",
+        "units": "#7A7A7A",
+        "discount-text": "#0e853b",
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
@@ -118,7 +122,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["Montserrat", "sans-serif"],
       serif: ["inherit", "serif"],
       mont: ["Montserrat", "sans-serif"],
     },
