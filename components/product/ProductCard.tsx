@@ -56,6 +56,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
     image: images,
     offers,
     isVariantOf,
+    sku
   } = product;
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
@@ -63,12 +64,14 @@ function ProductCard({ product, preload, itemListName }: Props) {
   const saleDiscount = price?.toString() && listPrice?.toString() && Math.round(
     ((listPrice - price) / listPrice) * 100,
   );
+ 
   return (
     <div
       data-deco="view-product"
       id={`product-card-${productID}`}
       class=" group max-w-[240px] font-mont "
     >
+     
       <a href={url} aria-label="product link">
         <div class="relative w-full">
           <div class="absolute flex justify-center  top-0 left-0 bg-white w-[34px] h-[34px] px-0  rounded-full shadow">
