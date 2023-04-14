@@ -90,15 +90,15 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           </Text>
         </h1>
         <div>
-          <div class="flex gap-2 items-center">
-            <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
+          <Text class="mt-2 text-[13px] text-[#848a87] font-bold tracking-[0.5px]">
+            {product.sku}
+          </Text>
+          <div class="flex gap-2 items-center mt-2">
+            <span class="text-[#fc0] text-[16px] tracking-[0px] font-bold leading-none">
               &#9733;&#9733;&#9733;&#9733;&#9733;
             </span>
             <p class="text-[#848a87] text-base">5 avaliações</p>
           </div>
-          <Text class="mt-2 text-[13px] text-[#848a87] font-bold tracking-[0.5px]">
-            {product.sku}
-          </Text>
         </div>
       </div>
       {/* Prices */}
@@ -201,18 +201,19 @@ function Details({
             itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
           />
         </div>
-        <section class="px-2 py-5 sm:p-6 lg:p-12 mx-4 mt-[20px] border leading-[1.15rem] text-base text-[#36403b] rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
+
+        <section class="px-2 py-5 sm:p-6 lg:p-12 mx-2 mt-[20px]  border leading-[1.15rem] text-base text-[#36403b] rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
           <div
             id={id}
-            class={` grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-[1fr_auto] justify-center `}
+            class="grid grid-cols-1 gap-4 sm:(grid-cols-[100px_390px_max-content] grid-rows-[1fr_auto] justify-center"
           >
             {/* Image Slider */}
             <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
               <Slider class="gap-6 scrollbar-none">
                 {images.map((img, index) => (
                   <Image
-                    class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
-                    sizes="(max-width: 510px) "
+                    class={`scroll-snap-center min-w-[100vw] sm:min-w-[390px]`}
+                    sizes="(max-width: 510px)"
                     style={{ aspectRatio: ASPECT_RATIO }}
                     src={img.url!}
                     alt={img.alternateName}
@@ -245,6 +246,7 @@ function Details({
                   />
                 </Button>
               </div>
+
               <p class="text-center text-[9px]">Imagem meramente ilustrativa</p>
             </div>
 
@@ -253,7 +255,7 @@ function Details({
               {images.map((img, _) => (
                 <Image
                   style={{ aspectRatio: ASPECT_RATIO }}
-                  class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
+                  class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px] cursor-pointer"
                   width={63}
                   height={87.5}
                   src={img.url!}
@@ -277,7 +279,7 @@ function Details({
                       Descrição do Produto
                     </h3>
                   </div>
-                  <div class="ml-2 mt-2 text-base text-[#848a87] leading-5 font-normal py-8">
+                  <div class="text-base text-[#848a87] leading-5 font-normal py-8">
                     {page.product.description}
                   </div>
                 </div>
@@ -337,7 +339,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <Container class="pt-16">
+    <Container class="pt-4">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
     </Container>
   );
