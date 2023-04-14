@@ -61,6 +61,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
   const isOnSale = listPrice !== price;
+  const outOfStock = price === undefined || price === 0;
   const saleDiscount = price?.toString() && listPrice?.toString() && Math.round(
     ((listPrice - price) / listPrice) * 100,
   );
@@ -73,20 +74,34 @@ function ProductCard({ product, preload, itemListName }: Props) {
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">
-          <div class="absolute flex justify-center  top-0 left-0 bg-white w-[34px] h-[34px] px-0  rounded-full shadow">
+          <div class="absolute flex  justify-center  top-0 left-0 bg-white w-[34px] h-[34px] px-0  rounded-full shadow">
             <WishlistIcon
               productId={isVariantOf?.productGroupID}
               sku={productID}
               title={name}
             />
           </div>
-          <div class="absolute flex justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
-            hover:bg-button-hover
-          ">
-            <Text class="text-white  tracking-wider text-sm">Adicionar</Text>
-          </div>
-          <div class=" max-h-[229px]
-          
+          {outOfStock
+            ? (
+              <div class="absolute transition duration-200 flex justify-center border-primary border items-center rounded-[10px] bg-white  w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
+          hover:bg-button-hover
+        ">
+                <Text class="text-primary transition duration-200 w-full h-full text-center leading-9 hover:text-white  tracking-wider text-sm">
+                  Avise-me
+                </Text>
+              </div>
+            )
+            : (
+              <div class="absolute flex transition duration-200 justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
+        hover:bg-button-hover
+      ">
+                <Text class="text-white  tracking-wider text-sm">
+                  Adicionar
+                </Text>
+              </div>
+            )}
+
+          <div class=" max-h-[229px] 
           ">
             <Image
               src={front.url!}
@@ -194,9 +209,11 @@ function ProductCard({ product, preload, itemListName }: Props) {
             </div>
           </div>
 
-          <Text class="text-xs font-semibold text-units">
-            1 un
-          </Text>
+          {!outOfStock && (
+            <Text class="text-xs font-semibold text-units">
+              1 un
+            </Text>
+          )}
         </div>
       </a>
     </div>
