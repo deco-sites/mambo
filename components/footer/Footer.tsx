@@ -320,13 +320,13 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
         </div>
       </FooterContainer>
 
-      <FooterContainer class="flex justify-between w-full">
+      <FooterContainer class="flex justify-between w-full bg-[#F8F8F8]">
         <Text
           class="flex items-center gap-1"
           variant="body"
           tone="default-inverse"
         >
-          Powered by{" "}
+          Powered by
           <a
             href="https://www.deco.cx"
             aria-label="powered by https://www.deco.cx"
