@@ -94,8 +94,9 @@ function QuotesItem({ name, message }: QuotesItem) {
 
 function Quotes({ testimony }: Props) {
   const id = useId();
+
   return (
-    <Container id={id}>
+    <Container id={id} class="flex items-center justify-center">
       <section class="grid max-w-[606px] grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr_30px] px-[5px] pb-[50px] sm:px-5">
         <h2 class="text-center row-start-1 col-span-full text-[#3f3f40] text-[25px] font-bold m-[18px]">
           Depoimentos

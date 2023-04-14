@@ -96,7 +96,7 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
 function Controls() {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2 bg-[#454545] leading-[1.15rem] text-[128%] outline-none rounded-r-[10px]">
+      <div class="hidden md:flex items-center justify-center z-10 col-start-1 row-start-2 bg-[#454545] leading-[1.15rem] text-[128%] outline-none rounded-r-[10px]">
         <Button
           class="flex justify-center items-center m-0 w-8 h-8 font-sans text-center text-black normal-case bg-transparent border-0 hover:cursor-pointer"
           variant="icon"
@@ -111,7 +111,7 @@ function Controls() {
           />
         </Button>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2 bg-[#454545] leading-[1.15rem] text-[128%] outline-none rounded-l-[10px]">
+      <div class="hidden md:flex items-center justify-center z-10 col-start-3 row-start-2 bg-[#454545] leading-[1.15rem] text-[128%] outline-none rounded-l-[10px]">
         <Button
           class="flex justify-center items-center m-0 w-8 h-8 font-sans text-center text-black normal-case bg-transparent border-0 hover:cursor-pointer"
           variant="icon"
