@@ -23,7 +23,7 @@ function ProductGallery({ columns, products }: Props) {
       class={`grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-0)`}
     >
       {products?.map((product, index) => (
-        <div class="hover:sm:(border-primary) sm:(px-4 py-8) border-1 border-solid rounded h-full border-transparent">
+        <div class="sm:(px-4 py-8) border-1 border-solid rounded h-full border-transparent">
           <ProductCard product={product} preload={index === 0} />
         </div>
       ))}
