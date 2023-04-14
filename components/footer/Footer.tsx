@@ -10,6 +10,7 @@ import { useState } from "preact/hooks";
 import Newsletter from "./Newsletter.tsx";
 import type { Props as NewsletterProps } from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";
+import { useSignal } from "@preact/signals";
 
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
@@ -58,15 +59,17 @@ function FooterContainer(
   return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
 }
 
-export interface Props {
-  links: Array<{
+export interface Link {
+  title: string;
+  items: Array<{
+    icon: AvailableIcons;
     title: string;
-    items: Array<{
-      icon: AvailableIcons;
-      title: string;
-      href: string;
-    }>;
+    href: string;
   }>;
+}
+
+export interface Props {
+  links: Link[];
   support: {
     phoneNumber: string;
     openingHours: string[];
@@ -79,6 +82,40 @@ export interface Props {
     logo: LiveImage;
     lines: string[];
   };
+}
+
+export interface FooterItem {
+  title: string;
+  children: ComponentChildren;
+}
+
+function FooterMobileItem({ title, children }: FooterItem) {
+  const expanded = useSignal(false);
+  return (
+    <li class="divide-y-1 divide-gray-300 ">
+      <div
+        class="flex flex-row justify-between items-center py-2 px-4"
+        onClick={() => expanded.value = !expanded.value}
+      >
+        <Text class=" text-[#36403b] !font-bold text-body leading-6 ">
+          {title}
+        </Text>
+        <Icon
+          id={expanded.value ? "ChevronUp" : "ChevronDown"}
+          width={20}
+          height={15}
+          strokeWidth={2}
+        />
+      </div>
+      {expanded.value && (
+        <ul
+          class={`flex flex-col gap-2 px-2 py-4`}
+        >
+          {children}
+        </ul>
+      )}
+    </li>
+  );
 }
 
 function Footer({ links = [], support, social = [], copyright }: Props) {
@@ -116,7 +153,7 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
                   {link.items.map((item) => (
                     <li class="flex flex-row gap-2">
                       <SectionItem item={item} />
-                      <Text class="text-footer-title text-sm hover:font-black">
+                      <Text class="text-footer-title text-sm hover:text-[#36403b]">
                         {item.title}
                       </Text>
                     </li>
@@ -132,20 +169,23 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
               </Text>
               <ul>
                 <li class="flex flex-col mt-10 text-body">
-                  <Text variant="heading-3" class="font-black">
+                  <Text variant="heading-3" class="text-[#36403b] !font-bold">
                     Regiões Metropolitanas
                   </Text>
                   {support.phoneNumber}
                 </li>
                 <li class="flex flex-col my-10">
-                  <Text variant="heading-3" class="font-black">
+                  <Text variant="heading-3" class="text-[#36403b] !font-bold">
                     Horários de atendimento:
                   </Text>
                   {support.openingHours.map((hours) => <Text>{hours}</Text>)}
                 </li>
               </ul>
               <ul class="flex flex-col">
-                <Text variant="heading-3" class="font-black text-footer-title">
+                <Text
+                  variant="heading-3"
+                  class="text-[#36403b] text-footer-title"
+                >
                   Siga-nos nas redes sociais
                 </Text>
                 <div class="flex flex-row gap-10 mt-10">
@@ -170,88 +210,52 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
         {/* Mobile view */}
         <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
           <li class="divide-y-1 divide-gray-300">
-            {links.map((link, index) => {
-              const isActive = index === expanded;
-              const liClass = isActive ? "flex-1" : "";
-
+            {links.map((link) => {
               return (
-                <li class="divide-y-1 divide-gray-300">
-                  <div
-                    class="flex flex-row justify-between"
-                    onClick={() => setExpanded(index)}
-                  >
-                    <Text class="text-gray-700 font-black text-body leading-6">
-                      {link.title}
-                    </Text>
-                    <Icon
-                      id={"ChevronDown"}
-                      width={20}
-                      height={15}
-                      strokeWidth={2}
-                    />
-                  </div>
-                  {index === expanded && (
-                    <ul
-                      class={`flex ${
-                        isIcon(link.items[0]) ? "flex-col" : "flex-col"
-                      } gap-2 px-2 pt-2`}
-                    >
-                      {link.items.map((item) => (
-                        <li key={index} class={`flex flex-col ${liClass}`}>
-                          <div class="flex text-footer-title text-sm hover:font-black">
-                            <SectionItem item={item} />
-                            <Text class="text-gray-500 md:text-footer-title text-sm leading-5 hover:font-black">
-                              {item.title}
-                            </Text>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
+                <FooterMobileItem {...link}>
+                  {link.items.map((item) => (
+                    <li class={`flex flex-col `}>
+                      <div class="flex text-footer-title gap-2 text-sm items-center hover:text-[#36403b]">
+                        <SectionItem item={item} />
+                        <Text class="text-gray-500 md:text-footer-title text-sm leading-5 hover:text-[#36403b]">
+                          {item.title}
+                        </Text>
+                      </div>
+                    </li>
+                  ))}
+                </FooterMobileItem>
               );
             })}
-            <ul>
-              <li>
-                <Text variant="heading-3" class="text-gray-700">
-                  Dúvidas ou Suporte
-                </Text>
-              </li>
-
-              <li class="flex flex-col mt-10 text-body">
-                <Text variant="heading-3" class="font-black">
+            <FooterMobileItem title="Dúvidas ou Suporte">
+              <li class="flex flex-col  text-body">
+                <Text variant="heading-3" class="text-[#36403b] !font-bold">
                   Regiões Metropolitanas
                 </Text>
                 {support.phoneNumber}
               </li>
-              <li class="flex flex-col my-10">
-                <Text variant="heading-3" class="font-black">
+              <li class="flex flex-col ">
+                <Text variant="heading-3" class="text-[#36403b] !font-bold">
                   Horários de atendimento:
                 </Text>
                 {support.openingHours.map((hours) => <Text>{hours}</Text>)}
               </li>
-            </ul>
-            <div>
-              <ul class="flex flex-col">
-                <Text variant="heading-3" class="font-bold">
-                  Siga-nos nas redes sociais
-                </Text>
-                <div class="flex flex-row gap-2 mt-5">
-                  {social.map((item) => (
-                    <li>
-                      <Icon
-                        media="(min-width: 768px)"
-                        id={item.icon}
-                        width={30}
-                        height={25}
-                        strokeWidth={1.5}
-                        class="text-red-600"
-                      />
-                    </li>
-                  ))}
-                </div>
-              </ul>
-            </div>
+            </FooterMobileItem>
+            <FooterMobileItem title="Nossas redes">
+              <div class="flex flex-row gap-2 ">
+                {social.map((item) => (
+                  <li>
+                    <Icon
+                      media="(min-width: 768px)"
+                      id={item.icon}
+                      width={30}
+                      height={25}
+                      strokeWidth={1.5}
+                      class="text-red-600"
+                    />
+                  </li>
+                ))}
+              </div>
+            </FooterMobileItem>
           </li>
         </ul>
       </FooterContainer>
