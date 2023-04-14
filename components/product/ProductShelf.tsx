@@ -94,7 +94,7 @@ function ProductShelf({
         id={id}
         class={`gap-6 col-span-full ${
           banner?.side === "Left" ? "lg:col-start-2" : "col-start-1"
-        } row-start-2 row-end-5`}
+        } row-start-2 row-end-5 relative`}
       >
         <Slider
           class={`gap-6 col-span-full ${
@@ -111,7 +111,7 @@ function ProductShelf({
 
         <>
           <div
-            class={`relative z-10 col-start-1 ${
+            class={`absolute top-1/2 z-10 col-start-1 ${
               banner?.side === "Left" ? "lg:col-start-2" : "col-start-1"
             } row-start-3 flex items-center justify-center  z-10 `}
           >
@@ -131,7 +131,7 @@ function ProductShelf({
               </Button>
             </div>
           </div>
-          <div class="relative flex items-center justify-center  z-10 col-end-5 row-start-3">
+          <div class="absolute top-1/2 right-[-16px]  flex items-center justify-center  z-10 col-end-5 row-start-3">
             <div class="absolute right-[-16px] flex items-center justify-center  bg-interactive-inverse rounded-full button-box-shadow">
               <Button
                 variant="icon"
