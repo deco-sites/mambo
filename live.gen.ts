@@ -19,7 +19,6 @@ import * as $$$$$8 from "./islands/SliderJS.tsx";
 import * as $$$$$9 from "./islands/ViewSendEvent.tsx";
 import * as $$$$$10 from "./islands/WishlistButton.tsx";
 import * as $$$$$11 from "./islands/Filters.tsx";
-import * as $$$$$12 from "./islands/Footer.tsx";
 import * as $$$$$$$$0 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$1 from "./sections/Carousel.tsx";
 import * as $$$$$$$$2 from "./sections/CookieConsent.tsx";
@@ -118,7 +117,6 @@ const manifest: DecoManifest = {
     "./islands/ViewSendEvent.tsx": $$$$$9,
     "./islands/WishlistButton.tsx": $$$$$10,
     "./islands/Filters.tsx": $$$$$11,
-    "./islands/Footer.tsx": $$$$$12,
   },
   "sections": {
     "deco-sites/mambo/sections/BannerPLP.tsx": $$$$$$$$0,

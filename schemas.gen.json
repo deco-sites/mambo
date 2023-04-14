@@ -2075,403 +2075,6 @@
       ],
       "title": "deco-sites/mambo/components/ui/ShippingSimulation.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "icon": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "ChevronLeft"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronRight"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronUp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronDown"
-                  },
-                  {
-                    "type": "string",
-                    "const": "QuestionMarkCircle"
-                  },
-                  {
-                    "type": "string",
-                    "const": "User"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ShoppingCart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Bars3"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Heart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MagnifyingGlass"
-                  },
-                  {
-                    "type": "string",
-                    "const": "XMark"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Plus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Minus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MapPin"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Phone"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Elo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Mastercard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Visa"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Pix"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Logo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Facebook"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Instagram"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Tiktok"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Truck"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discount"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Return"
-                  },
-                  {
-                    "type": "string",
-                    "const": "CreditCard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Deco"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discord"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Trash"
-                  },
-                  {
-                    "type": "string",
-                    "const": "FilterList"
-                  },
-                  {
-                    "type": "string",
-                    "const": "WhatsApp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ArrowsPointingOut"
-                  }
-                ],
-                "type": "string",
-                "title": "Icon"
-              },
-              "title": {
-                "type": "string",
-                "title": "Title"
-              },
-              "href": {
-                "type": "string",
-                "title": "Href"
-              }
-            },
-            "required": [
-              "icon",
-              "title",
-              "href"
-            ]
-          },
-          "title": "Items"
-        }
-      },
-      "required": [
-        "title",
-        "items"
-      ],
-      "title": "Link"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link"
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "links": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link[]",
-          "title": "Links"
-        },
-        "support": {
-          "type": "object",
-          "properties": {
-            "phoneNumber": {
-              "type": "string",
-              "title": "Phone Number"
-            },
-            "openingHours": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "title": "Opening Hours"
-            }
-          },
-          "required": [
-            "phoneNumber",
-            "openingHours"
-          ],
-          "title": "Support"
-        },
-        "social": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "icon": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "ChevronLeft"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronRight"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronUp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronDown"
-                  },
-                  {
-                    "type": "string",
-                    "const": "QuestionMarkCircle"
-                  },
-                  {
-                    "type": "string",
-                    "const": "User"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ShoppingCart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Bars3"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Heart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MagnifyingGlass"
-                  },
-                  {
-                    "type": "string",
-                    "const": "XMark"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Plus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Minus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MapPin"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Phone"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Elo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Mastercard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Visa"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Pix"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Logo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Facebook"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Instagram"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Tiktok"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Truck"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discount"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Return"
-                  },
-                  {
-                    "type": "string",
-                    "const": "CreditCard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Deco"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discord"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Trash"
-                  },
-                  {
-                    "type": "string",
-                    "const": "FilterList"
-                  },
-                  {
-                    "type": "string",
-                    "const": "WhatsApp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ArrowsPointingOut"
-                  }
-                ],
-                "type": "string",
-                "title": "Icon"
-              },
-              "href": {
-                "type": "string",
-                "title": "Href"
-              }
-            },
-            "required": [
-              "icon",
-              "href"
-            ]
-          },
-          "title": "Social"
-        },
-        "copyright": {
-          "type": "object",
-          "properties": {
-            "logo": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Logo"
-            },
-            "lines": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "title": "Lines"
-            }
-          },
-          "required": [
-            "logo",
-            "lines"
-          ],
-          "title": "Copyright"
-        }
-      },
-      "required": [
-        "links",
-        "support",
-        "social",
-        "copyright"
-      ],
-      "title": "deco-sites/mambo/components/footer/Footer.tsx@Props"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
@@ -2579,6 +2182,10 @@
         "sections"
       ],
       "title": "deco-cx/live/pages/LivePage.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner": {
       "type": "object",
@@ -2907,6 +2514,71 @@
         "features"
       ],
       "title": "deco-sites/mambo/components/ui/Features.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9OZXdzbGV0dGVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "icon for newsletter",
+          "title": "Icon"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "description": "the description a side the icon"
+        },
+        "placeholders": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "email": {
+              "type": "string",
+              "title": "Email"
+            }
+          },
+          "required": [
+            "name",
+            "email"
+          ],
+          "title": "Placeholders"
+        },
+        "button": {
+          "type": "string",
+          "title": "Button",
+          "description": "the description a side the icon"
+        }
+      },
+      "required": [
+        "icon",
+        "title",
+        "button"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "newsletter": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9OZXdzbGV0dGVyLnRzeA==@Props",
+          "title": "Newsletter"
+        },
+        "copyright": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Copyright"
+        }
+      },
+      "required": [
+        "newsletter",
+        "copyright"
+      ],
+      "title": "deco-sites/mambo/components/footer/Footer.tsx@Props"
     },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3NlYXJjaC9TZWFyY2hiYXIudHN4@EditableProps": {
       "type": "object",
@@ -4412,27 +4084,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0Zvb3Rlci50c3g=": {
-      "title": "./islands/Footer.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/Footer.tsx"
-          ],
-          "default": "./islands/Footer.tsx"
-        }
-      }
-    },
     "JGxpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz": {
       "title": "$live/handlers/routesSelection.ts",
       "type": "object",
@@ -5447,9 +5098,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0ZpbHRlcnMudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0Zvb3Rlci50c3g="
         }
       ]
     },

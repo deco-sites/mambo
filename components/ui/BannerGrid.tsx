@@ -23,7 +23,7 @@ export default function BannnerGrid({
 }: Props) {
   return (
     <Container>
-      <section class="w-full px-4 lg:px-0 mx-auto">
+      <section class="w-full px-4 mx-auto">
         <a href={href}>
           <Picture>
             <Source
