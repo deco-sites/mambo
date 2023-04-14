@@ -85,9 +85,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           </Text>
         </div>
         <h1 class="text-[30px] !font-bold leading-6">
-          <Text variant="heading-3" class="text-[30px] !font-bold">
-            {name}
-          </Text>
+          {name}
         </h1>
         <div>
           <Text class="mt-2 text-[13px] text-[#848a87] font-bold tracking-[0.5px]">
@@ -205,7 +203,7 @@ function Details({
         <section class="px-2 py-5 sm:p-6 lg:p-12 mx-2 mt-[20px]  border leading-[1.15rem] text-base text-[#36403b] rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
           <div
             id={id}
-            class="grid grid-cols-1 gap-4 sm:(grid-cols-[100px_390px_max-content] grid-rows-[1fr_auto] justify-center"
+            class="grid grid-cols-1 gap-4 sm:(grid-cols-[100px_390px_1fr] grid-rows-[1fr_auto] justify-center"
           >
             {/* Image Slider */}
             <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
@@ -270,11 +268,11 @@ function Details({
             </div>
           </div>
           {/* Description card */}
-          <div class="mt-4 sm:mt-6">
-            <Text variant="caption">
+          <div class="mt-4 sm:mt-6 w-full">
+            <Text variant="caption" class="w-full">
               {page.product.description && (
-                <div>
-                  <div class="cursor-pointer w-full border-b-2">
+                <>
+                  <div class="cursor-pointer w-full border-b-2 w-full">
                     <h3 class="border-b-2 py-[10px] border-[#f44237] w-min whitespace-nowrap font-bold text-sm text-[#5d6561]">
                       Descrição do Produto
                     </h3>
@@ -282,7 +280,7 @@ function Details({
                   <div class="text-base text-[#848a87] leading-5 font-normal py-8">
                     {page.product.description}
                   </div>
-                </div>
+                </>
               )}
             </Text>
           </div>
