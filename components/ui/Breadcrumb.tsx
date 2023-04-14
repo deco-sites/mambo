@@ -6,7 +6,11 @@ interface Props {
   itemListElement: BreadcrumbList["itemListElement"];
 }
 
-function Item({ name, item }: { name?: string; item?: string }) {
+function Item(
+  props: { name?: string; item?: string; isActive: boolean },
+) {
+  const { name, item, isActive } = props;
+
   if (!name || !item) {
     return null;
   }
@@ -14,7 +18,10 @@ function Item({ name, item }: { name?: string; item?: string }) {
   return (
     <li class="whitespace-nowrap overflow-hidden overflow-ellipsis">
       <a href={item} class="hover:underline">
-        <Text variant="caption">
+        <Text
+          variant="caption"
+          class={isActive ? "text-primary" : "text-gray-400"}
+        >
           {name}
         </Text>
       </a>
@@ -23,15 +30,24 @@ function Item({ name, item }: { name?: string; item?: string }) {
 }
 
 function Breadcrumb({ itemListElement = [] }: Props) {
+  const lastIndex = itemListElement.length - 1;
   return (
     <ul class="flex flex-row gap-2 items-center w-full">
-      <Item name="Home" item="/" />
-      {itemListElement.map((item) => (
+      <Item name="Home" item="/" isActive={false} />
+
+      {itemListElement.map((item, index) => (
         <>
           <li class="mt-0.5">
-            <Icon id="ChevronRight" width={16} height={16} strokeWidth={2} />
+            <Icon
+              width={14}
+              height={14}
+              strokeWidth={4}
+              id="ChevronRight"
+              class="text-gray-200"
+            />
           </li>
-          <Item {...item} />
+
+          <Item {...item} isActive={index === lastIndex} />
         </>
       ))}
     </ul>

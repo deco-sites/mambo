@@ -1,9 +1,10 @@
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 export interface Props {
   srcMobile: LiveImage;
-  srcDesktop?: LiveImage;
+  srcDesktop: LiveImage;
   /**
    * @description Image alt text
    */
@@ -22,15 +23,15 @@ export default function BannnerGrid({
 }: Props) {
   return (
     <Container>
-      <section class="w-full px-4 md:px-0 mx-auto">
+      <section class="w-full px-4 lg:px-0 mx-auto">
         <a href={href}>
-          <picture>
-            <source
+          <Picture>
+            <Source
               media="(max-width: 767px)"
               width={320}
               src={srcMobile}
             />
-            <source
+            <Source
               media="(min-width: 768px)"
               width={768}
               src={srcDesktop}
@@ -40,7 +41,7 @@ export default function BannnerGrid({
               src={srcDesktop}
               alt={alt}
             />
-          </picture>
+          </Picture>
         </a>
       </section>
     </Container>

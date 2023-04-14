@@ -64,6 +64,7 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "footer-title": "#7A7A7A",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -155,6 +156,9 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
+    expanded: {
+      display: "none",
+    },
     backdrop: {
       "&::backdrop": {
         background: "rgba(0, 0, 0, 0.5)",

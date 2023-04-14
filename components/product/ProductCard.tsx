@@ -69,7 +69,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
     <div
       data-deco="view-product"
       id={`product-card-${productID}`}
-      class=" group max-w-[240px] font-mont "
+      class=" group max-w-[240px]"
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">

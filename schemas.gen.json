@@ -2187,35 +2187,6 @@
       "type": "string",
       "format": "image-uri"
     },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "srcMobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Mobile"
-        },
-        "srcDesktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Desktop"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt",
-          "description": "Image alt text"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href",
-          "description": "When you click you go to"
-        }
-      },
-      "required": [
-        "srcMobile",
-        "alt",
-        "href"
-      ],
-      "title": "deco-sites/mambo/components/ui/BannerGrid.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lclBMUC50c3g=@Banner": {
       "type": "object",
       "properties": {
@@ -3175,6 +3146,73 @@
       "required": [],
       "title": "deco-sites/mambo/components/ui/WhatsApp.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "message": {
+          "type": "string",
+          "title": "Message"
+        }
+      },
+      "required": [
+        "name",
+        "message"
+      ],
+      "title": "QuotesItem"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem"
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "testimony": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem[]",
+          "title": "Testimony"
+        }
+      },
+      "required": [
+        "testimony"
+      ],
+      "title": "deco-sites/mambo/components/ui/Quotes.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt",
+          "description": "Image alt text"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href",
+          "description": "When you click you go to"
+        }
+      },
+      "required": [
+        "srcMobile",
+        "srcDesktop",
+        "alt",
+        "href"
+      ],
+      "title": "deco-sites/mambo/components/ui/BannerGrid.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==@Highlight": {
       "type": "object",
       "properties": {
@@ -3214,43 +3252,6 @@
       },
       "required": [],
       "title": "deco-sites/mambo/sections/Highlights.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "message": {
-          "type": "string",
-          "title": "Message"
-        }
-      },
-      "required": [
-        "name",
-        "message"
-      ],
-      "title": "QuotesItem"
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem"
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "testimony": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL1F1b3Rlcy50c3g=@QuotesItem[]",
-          "title": "Testimony"
-        }
-      },
-      "required": [
-        "testimony"
-      ],
-      "title": "deco-sites/mambo/components/ui/Quotes.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
@@ -4218,6 +4219,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0ZpbHRlcnMudHN4": {
+      "title": "./islands/Filters.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Filters.tsx"
+          ],
+          "default": "./islands/Filters.tsx"
+        }
+      }
+    },
     "JGxpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz": {
       "title": "$live/handlers/routesSelection.ts",
       "type": "object",
@@ -4320,27 +4337,6 @@
             "$live/pages/LivePage.tsx"
           ],
           "default": "$live/pages/LivePage.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA==": {
-      "title": "deco-sites/mambo/sections/BannerGrid.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/BannerGrid.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/BannerGrid.tsx"
         }
       }
     },
@@ -4607,27 +4603,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==": {
-      "title": "deco-sites/mambo/sections/Highlights.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/mambo/sections/Highlights.tsx"
-          ],
-          "default": "deco-sites/mambo/sections/Highlights.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9RdWVzdGlvbkFuZEFuc3dlci50c3g=": {
       "title": "deco-sites/mambo/sections/QuestionAndAnswer.tsx",
       "type": "object",
@@ -4662,6 +4637,48 @@
             "deco-sites/mambo/sections/Quotes.tsx"
           ],
           "default": "deco-sites/mambo/sections/Quotes.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA==": {
+      "title": "deco-sites/mambo/sections/BannerGrid.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/BannerGrid.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/BannerGrid.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==": {
+      "title": "deco-sites/mambo/sections/Highlights.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mambo/sections/Highlights.tsx"
+          ],
+          "default": "deco-sites/mambo/sections/Highlights.tsx"
         }
       }
     },
@@ -5229,6 +5246,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9pc2xhbmRzL0ZpbHRlcnMudHN4"
         }
       ]
     },
@@ -5270,9 +5290,6 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA=="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJQTFAudHN4"
         },
         {
@@ -5312,13 +5329,16 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA=="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9RdWVzdGlvbkFuZEFuc3dlci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9RdW90ZXMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tYW1iby9zZWN0aW9ucy9SYXRpbmcudHN4"
