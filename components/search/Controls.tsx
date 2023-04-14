@@ -1,55 +1,31 @@
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Filters from "deco-sites/fashion/components/search/Filters.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Sort from "deco-sites/fashion/components/search/Sort.tsx";
-import Modal from "deco-sites/fashion/components/ui/Modal.tsx";
-import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
-import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 type Props =
-  & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
+  & Pick<ProductListingPage, "filters" | "sortOptions">
   & {
     displayFilter?: boolean;
   };
 
-function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions }: Props,
-) {
-  const open = useSignal(false);
+function SearchControls(props: Props) {
+  const { displayFilter, sortOptions } = props;
 
   return (
-    <div class="flex flex-col justify-between mb-4 p-4 sm:(mb-0 p-0 gap-4 flex-row h-[53px] border-b-1)">
-      <div class="flex flex-row items-center sm:p-0 mb-2">
-        <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+    <div class="flex flex-col items-center justify-between gap-4 sm:(p-0 flex-row h-[53px] border-none) border-b-1 pb-8">
+      <div class="order-2 lg:order-1 w-full text-center lg:text-left">
+        <b>792</b> produtos encontrados
       </div>
 
-      <div class="flex flex-row items-center justify-between border-b-1 border-default sm:(gap-4 border-none)">
-        <Button
-          class={displayFilter ? "" : "sm:hidden"}
-          variant="tertiary"
-          onClick={() => {
-            open.value = true;
-          }}
-        >
-          Filtrar
-          <Icon id="FilterList" width={16} height={16} />
+      <div class="flex flex-row items-center justify-between w-full order-1 lg:order-2 lg:p-0 px-6">
+        <Button variant="secondary" class={displayFilter ? "" : "sm:hidden"}>
+          <Icon id="FilterList" class="text-primary" width={16} height={16} />
+          Filtrar por
         </Button>
+
         {sortOptions.length > 0 && <Sort sortOptions={sortOptions} />}
       </div>
-
-      <Modal
-        loading="lazy"
-        title="Filtrar"
-        mode="sidebar-right"
-        open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
-      >
-        <Filters filters={filters} />
-      </Modal>
     </div>
   );
 }
