@@ -131,7 +131,7 @@ function ProductShelf({
               </Button>
             </div>
           </div>
-          <div class="absolute top-1/2 right-[-16px]  flex items-center justify-center  z-10 col-end-5 row-start-3">
+          <div class="absolute top-1/2 right-[0]  flex items-center justify-center  z-10 col-end-5 row-start-3">
             <div class="absolute right-[-16px] flex items-center justify-center  bg-interactive-inverse rounded-full button-box-shadow">
               <Button
                 variant="icon"
