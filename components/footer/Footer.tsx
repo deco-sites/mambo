@@ -5,14 +5,11 @@ import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
+import { useState } from "preact/hooks";
 
 import Newsletter from "./Newsletter.tsx";
 import type { Props as NewsletterProps } from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";
-import {
-  Picture,
-  Source,
-} from "https://denopkg.com/deco-sites/std@1.0.0-rc.13/components/Picture.tsx";
 
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
@@ -85,6 +82,8 @@ export interface Props {
 }
 
 function Footer({ links = [], support, social = [], copyright }: Props) {
+  const [expanded, setExpanded] = useState(0);
+
   return (
     <footer class="w-full flex flex-col divide-y-1 divide-gray-50">
       <FooterContainer class="w-full bg-[#F0E6E6]">
@@ -101,14 +100,11 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
 
       <FooterContainer class="bg-white w-full">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20 mx-5">
+        <ul class="hidden sm:flex flex-row justify-center gap-20 mx-5">
           {links.map((link) => (
             <li>
               <div>
-                <Text
-                  variant="heading-3"
-                  class="uppercase text-[#7A7A7A]"
-                >
+                <Text variant="heading-3" class="uppercase text-footer-title">
                   {link.title}
                 </Text>
 
@@ -120,7 +116,7 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
                   {link.items.map((item) => (
                     <li class="flex flex-row gap-2">
                       <SectionItem item={item} />
-                      <Text class="text-[#7A7A7A] text-sm hover:font-black">
+                      <Text class="text-footer-title text-sm hover:font-black">
                         {item.title}
                       </Text>
                     </li>
@@ -149,6 +145,94 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
                 </li>
               </ul>
               <ul class="flex flex-col">
+                <Text variant="heading-3" class="font-black text-footer-title">
+                  Siga-nos nas redes sociais
+                </Text>
+                <div class="flex flex-row gap-10 mt-10">
+                  {social.map((item) => (
+                    <li>
+                      <Icon
+                        media="(min-width: 768px)"
+                        id={item.icon}
+                        width={35}
+                        height={30}
+                        strokeWidth={1.5}
+                        class="text-red-600"
+                      />
+                    </li>
+                  ))}
+                </div>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        {/* Mobile view */}
+        <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
+          <li class="divide-y-1 divide-gray-300">
+            {links.map((link, index) => {
+              const isActive = index === expanded;
+              const liClass = isActive ? "flex-1" : "";
+
+              return (
+                <li class="divide-y-1 divide-gray-300">
+                  <div
+                    class="flex flex-row justify-between"
+                    onClick={() => setExpanded(index)}
+                  >
+                    <Text class="text-gray-700 font-black text-body leading-6">
+                      {link.title}
+                    </Text>
+                    <Icon
+                      id={"ChevronDown"}
+                      width={20}
+                      height={15}
+                      strokeWidth={2}
+                    />
+                  </div>
+                  {index === expanded && (
+                    <ul
+                      class={`flex ${
+                        isIcon(link.items[0]) ? "flex-col" : "flex-col"
+                      } gap-2 px-2 pt-2`}
+                    >
+                      {link.items.map((item) => (
+                        <li key={index} class={`flex flex-col ${liClass}`}>
+                          <div class="flex text-footer-title text-sm hover:font-black">
+                            <SectionItem item={item} />
+                            <Text class="text-gray-500 md:text-footer-title text-sm leading-5 hover:font-black">
+                              {item.title}
+                            </Text>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+            <ul>
+              <li>
+                <Text variant="heading-3" class="text-gray-700">
+                  Dúvidas ou Suporte
+                </Text>
+              </li>
+
+              <li class="flex flex-col mt-10 text-body">
+                <Text variant="heading-3" class="font-black">
+                  Regiões Metropolitanas
+                </Text>
+                {support.phoneNumber}
+              </li>
+              <li class="flex flex-col my-10">
+                <Text variant="heading-3" class="font-black">
+                  Horários de atendimento:
+                </Text>
+                {support.openingHours.map((hours) => <Text>{hours}</Text>)}
+              </li>
+            </ul>
+            <div>
+              <ul class="flex flex-col">
                 <Text variant="heading-3" class="font-bold">
                   Siga-nos nas redes sociais
                 </Text>
@@ -170,41 +254,14 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
             </div>
           </li>
         </ul>
-
-        {/* Mobile view */}
-        <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-          {links.map((link) => (
-            <li>
-              <Text variant="body" tone="default-inverse">
-                <details>
-                  <summary>
-                    {link.title}
-                  </summary>
-
-                  <ul
-                    class={`flex ${
-                      isIcon(link.items[0]) ? "flex-row" : "flex-col"
-                    } gap-2 px-2 pt-2`}
-                  >
-                    {link.items.map((item) => (
-                      <li>
-                        <SectionItem item={item} />
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </Text>
-            </li>
-          ))}
-        </ul>
       </FooterContainer>
 
-      <FooterContainer class="flex justify-between w-full bg-white gap-20">
+      <FooterContainer class="flex flex-col md:flex-row justify-between w-full bg-white gap-20">
         <div class="flex flex-col mx-5">
           <Text>
             Aceitamos somente os seguintes cartões de crédito:
           </Text>
-          <div class="flex flex-row gap-2 mt-2">
+          <div class="flex flex-row gap-2 mt-2 justify-center md:justify-start">
             <Icon
               media="(min-width: 768px)"
               id={"Visa"}
@@ -231,30 +288,30 @@ function Footer({ links = [], support, social = [], copyright }: Props) {
             />
           </div>
         </div>
-        <div class="text-[#807C78] text-sm mr-5">
+        <div class="flex flex-col text-[#807C78] text-sm  md:mr-5 gap-2">
           <Text class="text-sm">Certificados e Segurança</Text>
           <Image
             src={copyright.logo}
             alt="logo"
             width={200}
             height={100}
-            class="object-fill object-center mx-5"
+            class="object-fill object-center mr-10"
           />
         </div>
       </FooterContainer>
 
-      <FooterContainer class="flex justify-between w-full bg-[#F8F8F8] gap-20">
+      <FooterContainer class="flex flex-col md:flex-row justify-between w-full bg-[#F8F8F8] gap-20">
         <Image
           src={copyright.logo}
           alt="logo"
           width={200}
           height={100}
-          class="object-fill object-center mx-5"
+          class="object-fill object-center mx-5 flex self-center"
         />
-        <ul class="text-[#36403B] text-sm">
+        <ul class="text-[#36403B] text-sm flex flex-col text-center self-center">
           {copyright.lines.map((lines) => <li>{lines}</li>)}
         </ul>
-        <div class="text-[#807C78] text-sm mr-5">
+        <div class="text-[#807C78] text-sm mr-5 flex self-center">
           <Text>Desenvolvido por mim mesmo</Text>
         </div>
       </FooterContainer>
