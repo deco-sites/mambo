@@ -1,11 +1,9 @@
 import { useId } from "preact/hooks";
 import AddToCartButton from "deco-sites/fashion/islands/AddToCartButton.tsx";
-import ShippingSimulation from "deco-sites/fashion/islands/ShippingSimulation.tsx";
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import {
   Slider,
@@ -19,9 +17,9 @@ import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
-import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
-import WishlistButton from "../wishlist/WishlistButton.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import AditionalInfo from "../ui/AditionalInfo.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -34,8 +32,8 @@ export interface Props {
   variant?: Variant;
 }
 
-const WIDTH = 360;
-const HEIGHT = 500;
+const WIDTH = 270;
+const HEIGHT = 275;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 /**
@@ -76,25 +74,35 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
   return (
     <>
       {/* Code and name */}
-      <div class="mt-4 sm:mt-8">
+      <div class="mt-4 sm:mt-8 flex flex-col sm:items-start gap-3">
         <div>
-          <Text tone="subdued" variant="caption">
+          <Text
+            tone="subdued"
+            variant="caption"
+            class="text-sm text-[#848a87] leading-[20px]"
+          >
             {brand}
           </Text>
         </div>
-        <h1>
-          <Text variant="heading-3">{name}</Text>
+        <h1 class="text-[30px] !font-bold leading-6">
+          <Text variant="heading-3" class="text-[30px] !font-bold">
+            {name}
+          </Text>
         </h1>
-        <Text class="mt-2 text-[13px] font-bold tracking-[0.5px]">
-          {product.identifier}
-        </Text>
+        <div>
+          <div class="flex gap-2 items-center">
+            <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </span>
+            <p class="text-[#848a87] text-base">5 avaliações</p>
+          </div>
+          <Text class="mt-2 text-[13px] text-[#848a87] font-bold tracking-[0.5px]">
+            {product.sku}
+          </Text>
+        </div>
       </div>
       {/* Prices */}
-
-      <span class="text-[#fc0] text-[24px] tracking-[0px] font-bold leading-none">
-        &#9733;&#9733;&#9733;&#9733;&#9733;
-      </span>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 my-2">
         <div class="flex flex-col gap-1">
           <div class="flex min-h-[12px]">
             {isOnSale && (
@@ -127,12 +135,19 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
               </Text>
             )}
           </div>
+          <Text
+            variant="caption"
+            tone="subdued"
+            class="text-[#848a87] !font-bold"
+          >
+            1 un
+          </Text>
         </div>
       </div>
       {/* Sku Selector */}
 
       {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+      <div class="mt-4 sm:mt-10 flex flex-col sm:max-w-[200px] gap-2">
         {seller && (
           <AddToCartButton
             skuId={productID}
@@ -144,27 +159,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           />
         )}
       </div>
-      {/* Shipping Simulation */}
-      <div class="mt-8">
-        <ShippingSimulation
-          items={[{
-            id: Number(product.sku),
-            quantity: 1,
-            seller: seller ?? "1",
-          }]}
-        />
-      </div>
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <Text variant="caption">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div class="ml-2 mt-2">{description}</div>
-            </details>
-          )}
-        </Text>
-      </div>
+      <AditionalInfo />
       <ViewSendEvent
         event={{
           name: "view_item",
@@ -201,74 +196,96 @@ function Details({
   if (variant === "slider") {
     return (
       <>
-        <Breadcrumb
-          itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
-        />
-        <div
-          id={id}
-          class={` grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
-            (HEIGHT / WIDTH).toFixed(2)
-          }*40vw)])`}
-        >
-          {/* Image Slider */}
-          <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
-            <Slider class="gap-6">
-              {images.map((img, index) => (
+        <div class="ml-2">
+          <Breadcrumb
+            itemListElement={page.breadcrumbList?.itemListElement.slice(0, -1)}
+          />
+        </div>
+        <section class="px-2 py-5 sm:p-6 lg:p-12 mx-4 mt-[20px] border leading-[1.15rem] text-base text-[#36403b] rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
+          <div
+            id={id}
+            class={` grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-[1fr_auto] justify-center `}
+          >
+            {/* Image Slider */}
+            <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
+              <Slider class="gap-6 scrollbar-none">
+                {images.map((img, index) => (
+                  <Image
+                    class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
+                    sizes="(max-width: 510px) "
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    src={img.url!}
+                    alt={img.alternateName}
+                    width={WIDTH}
+                    height={HEIGHT}
+                    // Preload LCP image for better web vitals
+                    preload={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                ))}
+              </Slider>
+
+              <div class="sm:hidden absolute left-2 top-1/2  rounded-full">
+                <Button variant="icon" data-slide="prev" aria-label="Previous">
+                  <Icon
+                    size={20}
+                    class="text-[#f44237]"
+                    id="ChevronLeft"
+                    strokeWidth={3}
+                  />
+                </Button>
+              </div>
+              <div class="sm:hidden absolute right-2 top-1/2 rounded-full">
+                <Button variant="icon" data-slide="next" aria-label="Next">
+                  <Icon
+                    size={20}
+                    class="text-[#f44237]"
+                    id="ChevronRight"
+                    strokeWidth={3}
+                  />
+                </Button>
+              </div>
+              <p class="text-center text-[9px]">Imagem meramente ilustrativa</p>
+            </div>
+
+            {/* Dots */}
+            <SliderDots class="hidden sm:block gap-2 override:(justify-start) overflow-auto px-4 sm:(px-0 flex-col col-start-1 col-span-1 row-start-1)">
+              {images.map((img, _) => (
                 <Image
-                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
-                  sizes="(max-width: 640px) "
                   style={{ aspectRatio: ASPECT_RATIO }}
+                  class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
+                  width={63}
+                  height={87.5}
                   src={img.url!}
                   alt={img.alternateName}
-                  width={WIDTH}
-                  height={HEIGHT}
-                  // Preload LCP image for better web vitals
-                  preload={index === 0}
-                  loading={index === 0 ? "eager" : "lazy"}
                 />
               ))}
-            </Slider>
+            </SliderDots>
 
-            <div class="absolute left-2 top-1/2  bg-interactive-inverse rounded-full border-default border">
-              <Button variant="icon" data-slide="prev" aria-label="Previous">
-                <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-              </Button>
-            </div>
-            <div class="absolute right-2 top-1/2 bg-interactive-inverse rounded-full border-default border">
-              <Button variant="icon" data-slide="next" aria-label="Next">
-                <Icon size={20} id="ChevronRight" strokeWidth={3} />
-              </Button>
-            </div>
-
-            <div class="absolute top-2 right-2 bg-interactive-inverse rounded-full">
-              <ProductImageZoom
-                images={images}
-                width={1280}
-                height={1280 * HEIGHT / WIDTH}
-              />
+            {/* Product Info */}
+            <div class="sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
+              <ProductInfo page={page} />
             </div>
           </div>
-
-          {/* Dots */}
-          <SliderDots class="gap-2 override:(justify-start) overflow-auto px-4 sm:(px-0 flex-col col-start-1 col-span-1 row-start-1)">
-            {images.map((img, _) => (
-              <Image
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
-                width={63}
-                height={87.5}
-                src={img.url!}
-                alt={img.alternateName}
-              />
-            ))}
-          </SliderDots>
-
-          {/* Product Info */}
-          <div class=" px-4 sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
-            <ProductInfo page={page} />
+          {/* Description card */}
+          <div class="mt-4 sm:mt-6">
+            <Text variant="caption">
+              {page.product.description && (
+                <div>
+                  <div class="cursor-pointer w-full border-b-2">
+                    <h3 class="border-b-2 py-[10px] border-[#f44237] w-min whitespace-nowrap font-bold text-sm text-[#5d6561]">
+                      Descrição do Produto
+                    </h3>
+                  </div>
+                  <div class="ml-2 mt-2 text-base text-[#848a87] leading-5 font-normal py-8">
+                    {page.product.description}
+                  </div>
+                </div>
+              )}
+            </Text>
           </div>
-        </div>
-        <SliderJS rootId={id}></SliderJS>
+          <SliderJS rootId={id}></SliderJS>
+        </section>
       </>
     );
   }
@@ -300,7 +317,7 @@ function Details({
       </Slider>
 
       {/* Product Info */}
-      <div class="px-4 sm:(pr-0 pl-6)">
+      <div class="px-4 flex flex-col items-start sm:(pr-0 pl-6)">
         <ProductInfo page={page} />
       </div>
     </div>
@@ -320,7 +337,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <Container class="py-0 sm:py-10 ">
+    <Container class="pt-16">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
     </Container>
   );

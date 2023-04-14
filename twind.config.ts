@@ -192,6 +192,9 @@ const options: Omit<Options, "selfURL"> = {
     "button-box-shadow": {
       "box-shadow": "0 4px 4px rgb(0 0 0 / 25%);",
     },
+    "card-box-shadow": {
+      "box-shadow": "0 16px 24px rgb(86 115 101 / 25%);",
+    },
   },
 };
 
