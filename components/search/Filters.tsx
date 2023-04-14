@@ -19,11 +19,11 @@ function FilterValues({ key, values }: FilterToggle) {
     : "flex-col";
 
   return (
-    <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
+    <div class={`flex flex-wrap gap-2 ${flexDirection}`}>
       {values.map(({ label, value, url, selected, quantity }) => {
         if (key === "cor") {
           return (
-            <a href={url}>
+            <a href={url} title={value}>
               <Avatar
                 // deno-lint-ignore no-explicit-any
                 content={value as any}
@@ -36,7 +36,7 @@ function FilterValues({ key, values }: FilterToggle) {
 
         if (key === "tamanho") {
           return (
-            <a href={url}>
+            <a href={url} title={label}>
               <Avatar
                 content={label}
                 disabled={selected}
@@ -48,7 +48,11 @@ function FilterValues({ key, values }: FilterToggle) {
 
         return (
           <a href={url} class="flex items-center gap-2">
-            <input type="checkbox" checked={selected} class="hidden" />
+            <input
+              type="checkbox"
+              checked={selected}
+              onChange={() => (window.location.href = url)}
+            />
             <Text variant="caption">{label}</Text>
             <Text tone="subdued" variant="caption">
               ({quantity})
@@ -56,21 +60,35 @@ function FilterValues({ key, values }: FilterToggle) {
           </a>
         );
       })}
-    </ul>
+    </div>
   );
 }
 
 function Filters({ filters }: Props) {
+  const lastFilterIndex = filters.length - 1;
+
   return (
-    <ul class="flex flex-col gap-6 p-4">
+    <ul class="flex flex-col gap-6">
       {filters
         .filter(isToggle)
-        .map((filter) => (
-          <li class="flex flex-col gap-4">
-            <Text variant="body">{filter.label}</Text>
-            <FilterValues {...filter} />
-          </li>
-        ))}
+        .map((filter, index) => {
+          const isLast = index === lastFilterIndex;
+          const border = isLast
+            ? "border-b-1 border-solid border-gray-200 pb-6"
+            : "";
+
+          return (
+            <li class={`flex flex-col gap-4 ${border}`}>
+              <span class="text-body text-default font-semibold">
+                {filter.label}
+              </span>
+
+              <div class="h-full max-h-[240px] overflow-scroll">
+                <FilterValues {...filter} />
+              </div>
+            </li>
+          );
+        })}
     </ul>
   );
 }

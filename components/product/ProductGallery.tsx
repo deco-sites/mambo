@@ -16,14 +16,16 @@ export interface Props {
 }
 
 function ProductGallery({ columns, products }: Props) {
-  const { desktop = 4, mobile = 2 } = columns ?? {};
+  const { desktop = 5, mobile = 2 } = columns ?? {};
 
   return (
     <div
-      class={`grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-10)`}
+      class={`grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-0)`}
     >
       {products?.map((product, index) => (
-        <ProductCard product={product} preload={index === 0} />
+        <div class="hover:sm:(border-primary) sm:(px-4 py-8) border-1 border-solid rounded h-full border-transparent">
+          <ProductCard product={product} preload={index === 0} />
+        </div>
       ))}
     </div>
   );

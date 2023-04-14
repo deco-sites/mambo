@@ -27,18 +27,32 @@ function Sort({ sortOptions }: Props) {
   const sort = useSort();
 
   return (
-    <select
-      id="sort"
-      name="sort"
-      onInput={applySort}
-      class="w-min h-[36px] px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none"
-    >
-      {sortOptions.map(({ value, label }) => (
-        <option key={value} value={value} selected={value === sort}>
-          <Text variant="caption">{label}</Text>
-        </option>
-      ))}
-    </select>
+    <div class="ml-auto flex flex-row gap-6 items-center justify-center">
+      <span class="hidden lg:block text-gray-600">
+        Ordernar por
+      </span>
+
+      <div class="border-1 border-solid border-gray-200 rounded px-2">
+        <select
+          id="sort"
+          name="sort"
+          title="Sort"
+          onInput={applySort}
+          class="w-min h-[36px] p-0 m-0 text-primary text-button cursor-pointer outline-none bg-transparent"
+        >
+          {sortOptions.map(({ value, label }) => (
+            <option
+              key={value}
+              value={value}
+              selected={value === sort}
+              class="text-primary text-button"
+            >
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
   );
 }
 

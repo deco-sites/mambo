@@ -5,7 +5,7 @@ import Icon from "./Icon.tsx";
 
 function QuestionAndAnswer() {
   return (
-    <Container class="w-full p-8 font-mont">
+    <Container class="w-full p-8">
       <section class="p-8 border rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
         <Text
           variant="heading-2"

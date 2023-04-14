@@ -48,7 +48,7 @@ function ProductShelf({
 
   return (
     <Container
-      class={`grid grid-cols-[40px_1fr_40px] font-mont lg:grid-cols-[${
+      class={`grid grid-cols-[40px_1fr_40px] lg:grid-cols-[${
         banner?.side === "Left" ? "auto_" : ""
       }40px_1fr_40px${
         banner?.side === "Right" ? "_auto" : ""
