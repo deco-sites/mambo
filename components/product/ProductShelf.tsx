@@ -54,7 +54,7 @@ function ProductShelf({
         banner?.side === "Right" ? "_auto" : ""
       }] grid-rows-[57px_1fr_40px_1fr_20px] items-center py-10 px-5`}
     >
-      <div class="row-start-1 h-full items-center flex col-span-full col-end-8 justify-between w-full border-b">
+      <div class="row-start-1 h-full items-center flex col-span-full col-end-9 justify-between w-full border-b">
         <h2>
           <Text variant="heading-2" class="text-[#5d6561]">{title}</Text>
         </h2>
