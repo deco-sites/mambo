@@ -127,11 +127,13 @@ function Result({
             // TODO: get category name from search or cms setting
             item_list_name: "",
             item_list_id: "",
-            items: page.products?.map((product) => mapProductToAnalyticsItem({
-              ...(useOffer(product.offers)),
-              product,
-              breadcrumbList: page.breadcrumb,
-            })),
+            items: page.products?.map((product) =>
+              mapProductToAnalyticsItem({
+                ...(useOffer(product.offers)),
+                product,
+                breadcrumbList: page.breadcrumb,
+              })
+            ),
           },
         }}
       />
