@@ -5,7 +5,7 @@ import Icon from "./Icon.tsx";
 
 function Rating() {
   return (
-    <Container class="w-full p-8 font-mont">
+    <Container class="w-full p-8">
       <section class="p-8 border leading-[1.15rem] text-base text-[#36403b] rounded-[0.5rem] border-[#dadedc] flex flex-col gap-4 items-start">
         <Text
           variant="heading-2"
