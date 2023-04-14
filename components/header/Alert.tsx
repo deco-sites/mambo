@@ -14,11 +14,11 @@ function Alert({ image }: Props) {
   return (
     <div
       id={id}
-      class="bg-primary gap-6 scrollbar-none h-[50px]  hidden lg:flex"
+      class="bg-primary gap-6 scrollbar-none h-[50px] hidden lg:flex"
     >
-      <div class="flex justify-center items-center  w-screen h-full">
+      <div class="flex justify-center items-center w-full h-full">
         <Image
-          class="max-h-full h-[50px] object-fit"
+          class="max-h-full w-full h-[50px] object-fill"
           src={image}
           width={1846}
           height={48}
