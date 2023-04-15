@@ -134,7 +134,7 @@ function BannerCarousel({ images, preload, interval }: Props) {
   const id = useId();
 
   return (
-    <Container>
+    <Container class="mt-6">
       <div
         id={id}
         class="grid grid-cols-[30px_1fr_30px] sm:grid-cols-[30px_1fr_30px] grid-rows-[1fr_30px_1fr_48px] w-full h-[350px]"

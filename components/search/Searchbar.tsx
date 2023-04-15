@@ -84,7 +84,7 @@ function Searchbar({
       />
 
       {/* the focus:sibling:flex above controls this div visibility */}
-      <div class="hidden absolute flex-col gap-6 bg-white border border-default rounded top-full left-0 w-full p-5 mt-1 hover:flex">
+      <div class="hidden absolute flex-col gap-6 bg-white border border-default rounded top-full left-0 w-full p-5 mt-1 hover:flex z-30">
         {searches && searches.length > 0 && (
           <SearchTermList title="Os mais buscados" terms={searches} />
         )}

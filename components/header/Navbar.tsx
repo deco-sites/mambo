@@ -10,7 +10,7 @@ function Navbar({ items, searchbar }: {
   items: INavItem[];
   searchbar: SearchbarProps;
 }) {
-  const highlighted = items;
+  const highlighted = items.filter((item) => item.highlighted);
 
   return (
     <>
@@ -30,14 +30,12 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="shadow-lg">
-        <div class="hidden lg:flex flex-row justify-between items-center border-b-1 border-default w-full h-[80px]">
+      <div class="hidden lg:block shadow-lg">
+        <div class="flex flex-row justify-between items-center border-b-1 border-default w-full h-[80px]">
           <Container class="flex flex-row gap-20 w-full">
-            <div class="flex-none">
-              <a href="/" aria-label="Store logo" class="block">
-                <Icon id="Logo" width={100} height={21} />
-              </a>
-            </div>
+            <a href="/" aria-label="Store logo" class="flex items-center">
+              <Icon id="Logo" width={100} height={21} />
+            </a>
 
             <Searchbar {...searchbar} />
 
@@ -80,10 +78,80 @@ function Navbar({ items, searchbar }: {
           </Container>
         </div>
 
-        <Container class="flex flex-row gap-20 w-full h-[48px]">
-          <div>
-            <h1>ok</h1>
+        <Container class="flex flex-row gap-20 w-full h-[48px] items-center">
+          <div class="relative flex flex-col items-center group h-full">
+            <span class="h-full font-bold cursor-pointer flex flex-row gap-2 text-gray-700 items-center">
+              <Icon id="Bars3" width={16} height={16} strokeWidth={1} />
+              Todas as categorias
+            </span>
+
+            <div class="hidden group-hover:block absolute top-full left-0 rounded-bl-lg">
+              <ul class="flex flex-col relative py-2 shadow-lg bg-white w-[270px] z-20">
+                {items.map((item) => (
+                  <li class="text-sm text-gray-600 hover:text-primary">
+                    <a
+                      href={item.href}
+                      class="flex flex-row gap-2 items-center font-light px-4 py-2 hover:sibling:grid"
+                    >
+                      <Icon
+                        width={24}
+                        height={24}
+                        id={item.icon!}
+                        strokeWidth={0.5}
+                      />
+                      {item.label}
+                    </a>
+
+                    {Boolean(item.children?.length) && (
+                      <ul class="absolute bg-[#f8f9fc] h-full hidden hover:grid grid-cols-[200px_200px_200px_200px] gap-6 top-0 left-full px-8 py-4 shadow-lg z-10">
+                        {item.children?.map((item) => (
+                          <li class="text-default flex flex-col gap-2">
+                            <a
+                              href={item.href}
+                              class="whitespace-nowrap font-bold"
+                            >
+                              {item.label}
+                            </a>
+
+                            {item.children && (
+                              <ul class="flex flex-col gap-2">
+                                {item.children.map((item) => (
+                                  <li class="text-default hover:text-primary">
+                                    <a href={item.href}>
+                                      {item.label}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+
+          <ul class="flex flex-row gap-12 items-center ml-auto">
+            {highlighted.map((item) => (
+              <li class="text-sm">
+                <a
+                  href={item.href}
+                  class="flex flex-row gap-2 items-center text-gray-600 hover:text-primary font-light"
+                >
+                  <Icon
+                    width={24}
+                    height={24}
+                    id={item.icon!}
+                    strokeWidth={0.5}
+                  />
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </Container>
       </div>
     </>

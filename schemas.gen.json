@@ -2472,6 +2472,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Food"
+            },
+            {
+              "type": "string",
+              "const": "Fruit"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Adega"
             }
           ],
           "type": "string",
@@ -2765,6 +2781,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Food"
+            },
+            {
+              "type": "string",
+              "const": "Fruit"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Adega"
             }
           ],
           "type": "string",
