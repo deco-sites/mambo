@@ -42,7 +42,7 @@ function Footer(props: Props) {
 
       <FooterContainer class="w-full bg-[#E6E6E6] border-t-1 border-solid border-[#f2f7f5]">
         <div class="flex flex-col lg:flex-row gap-6 max-w-[1440px] w-full text-gray-700">
-          <Icon id="Logo" height={28} />
+          <Icon id="Logo" width={130} height={28} />
 
           <div class="flex flex-col gap-2 text-xs">
             {props.copyright.map((str) => <p>{str}</p>)}

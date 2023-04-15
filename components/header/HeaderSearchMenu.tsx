@@ -26,7 +26,7 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
     >
       {open && (
         <Suspense fallback={<Loading />}>
-          <Searchbar {...searchbar} variant="desktop" />
+          <Searchbar {...searchbar} />
         </Suspense>
       )}
     </div>

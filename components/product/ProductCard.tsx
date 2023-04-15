@@ -95,7 +95,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
               <div class="absolute flex transition duration-200 justify-center items-center rounded-[10px] bg-primary w-[5.8rem] h-[2.4rem] top-0 right-0  w-[93px]
         hover:bg-button-hover
       ">
-                <Text class="text-white  tracking-wider text-sm">
+                <Text class="text-white tracking-wider text-sm">
                   Adicionar
                 </Text>
               </div>
@@ -128,40 +128,6 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-
-              {
-                /* <Button as="a" href={product.url}>
-                <Icon
-          id="ArrowsPointingOut"
-          size={20}
-          stroke="currentColor"
-          strokeWidth={2}
-        />
-              </Button>  */
-              }
-
-              {/* FIXME: Understand why fresh breaks rendering this component */}
-              {
-                /* <SendEventButton
-                as="a"
-                href={product.url}
-                event={{
-                  name: "select_item",
-                  params: {
-                    item_list_name: itemListName,
-                    items: [
-                      mapProductToAnalyticsItem({
-                        product,
-                        price,
-                        listPrice,
-                      }),
-                    ],
-                  },
-                }}
-              >
-                Visualizar Produto
-              </SendEventButton> */
-              }
             </div>
           )}
         </div>

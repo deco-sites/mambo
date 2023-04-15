@@ -11,22 +11,13 @@ interface Props
 export default function SearchTermList({ terms, title, ...ulProps }: Props) {
   return (
     <div class="flex flex-col gap-6 md:(w-[15.25rem] max-w-[15.25rem])">
-      <Text variant="heading-3" role="heading" aria-level={3}>{title}</Text>
+      <span class="font-bold text-sm text-gray-800">{title}</span>
+
       <ul {...ulProps} class="flex flex-col gap-6">
         {terms.map(({ term }) => (
           <li>
-            <a href={`/s?q=${term}`} class="flex gap-4 items-center">
-              <Text variant="body">
-                <Icon
-                  id="MagnifyingGlass"
-                  width={20}
-                  height={20}
-                  strokeWidth={0.01}
-                />
-              </Text>
-              <Text variant="body">
-                {term}
-              </Text>
+            <a href={`/s?q=${term}`} class="text-gray-500 hover:text-primary">
+              {term}
             </a>
           </li>
         ))}

@@ -1,17 +1,18 @@
-import Modals from "deco-sites/fashion/islands/HeaderModals.tsx";
-import type { Image } from "deco-sites/std/components/types.ts";
-import type { EditableProps as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
-
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
+import type { LoaderReturnType } from "$live/types.ts";
 import { headerHeight, navbarHeight } from "./constants.ts";
+import Modals from "deco-sites/fashion/islands/HeaderModals.tsx";
+import type { Suggestion } from "deco-sites/std/commerce/types.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Icon, { AvailableIcons } from "deco-sites/mambo/components/ui/Icon.tsx";
+import type { EditableProps as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 
 export interface NavItem {
   label: string;
   href: string;
+  icon: AvailableIcons;
+  highlighted: boolean;
   children?: Array<{
     label: string;
     href: string;
@@ -20,10 +21,6 @@ export interface NavItem {
       href: string;
     }>;
   }>;
-  image?: {
-    src?: Image;
-    alt?: string;
-  };
 }
 
 export interface Props {
@@ -31,17 +28,12 @@ export interface Props {
 
   /** @title Search Bar */
   searchbar?: SearchbarProps;
+
   /**
    * @title Navigation items
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: NavItem[];
-
-  /**
-   * @title Product suggestions
-   * @description Product suggestions displayed on search
-   */
-  products?: LoaderReturnType<Product[] | null>;
 
   /**
    * @title Enable Top Search terms
@@ -53,20 +45,19 @@ function Header(
   {
     Alert: alert,
     searchbar: _searchbar,
-    products,
     navItems = [],
     suggestions,
   }: Props,
 ) {
-  const searchbar = { ..._searchbar, products, suggestions };
+  const searchbar = { ..._searchbar, suggestions };
+
   return (
     <header class={`lg:h-[${headerHeight}] h-[${navbarHeight}]`}>
       <div class="bg-default fixed w-full z-50">
-        <Alert
-          image={alert}
-        />
+        <Alert image={alert} />
         <Navbar items={navItems} searchbar={searchbar} />
       </div>
+
       <Modals
         menu={{ items: navItems }}
         searchbar={searchbar}
